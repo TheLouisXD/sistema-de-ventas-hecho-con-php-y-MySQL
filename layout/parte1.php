@@ -46,7 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </li>
       <!-- Ponemos el nombre del bazar -->
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">los monitos de la nona</a>
+        <a href="<?php echo $URL?>/Jefe_de_ventas" class="nav-link">los monitos de la nona</a>
       </li>
 
       <!-- Creamos un boton que llama al archivo que cierra la sesion -->
@@ -72,8 +72,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="<?php echo $URL ?>" class="brand-link">
+    <!-- Logo del sistema, tambien redirige a la pantalla principal -->
+    <a href="<?php echo $URL?>/Jefe_de_ventas" class="brand-link">
       <img src="<?php echo $URL?>/imagenes/Logo.png" alt="Bazar Logo" class="brand-image elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Los monitos de la nona</span>
     </a>

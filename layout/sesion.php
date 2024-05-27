@@ -19,7 +19,7 @@
 
   }else{
     echo "no existe sesion";
-    header("Location: ".$URL."/login");
+    header("Location: ".$URL."");
   }
 
 ?>

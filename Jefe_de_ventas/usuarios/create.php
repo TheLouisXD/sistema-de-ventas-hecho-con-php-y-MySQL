@@ -62,7 +62,7 @@
                           <div class="col-md-12">
 
                             <!-- El formulario envia la informacion al controlador create.php para asi poder registrar los datos -->
-                            <form action="../app/controllers/usuarios/create.php" method="post" autocomplete="off">
+                            <form action="../../app/controllers/usuarios/create.php" method="post" autocomplete="off">
                               <div class="form-group">
                                 <!-- Hay que agregar el nombre a cada campo -->
                                 <label for="">Nombre y Apellido</label>
