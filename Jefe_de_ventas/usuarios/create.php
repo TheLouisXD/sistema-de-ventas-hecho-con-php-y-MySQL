@@ -4,7 +4,7 @@
 
   include("../../app/config.php");
   // Reducimos codigo e importamos la verificacion
-  include("../../layout/sesion.php");
+  include("../../layout/sesion_jefe_venta.php");
 
   include("../../layout/jefe_venta/parte1.php");
 
@@ -80,6 +80,13 @@
                                 <label for="">Repita la contraseña</label>
                                 <input type="text" name="password_repeat" class="form-control" required>
                               </div>
+
+                              <!-- Agregamos el input para elegir rol del usuario -->
+                              <select class="custom-select" name="rol" id="inputGroupSelect01">
+                                <option selected disabled>Elija el rol del usuario</option>
+                                <option value="1">Jefe de ventas</option>
+                                <option value="2">Vendedor</option>
+                              </select>
 
                               <hr>
                               <!-- Agregamos los botones -->

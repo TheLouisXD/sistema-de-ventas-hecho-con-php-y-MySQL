@@ -4,9 +4,13 @@
     include("../../config.php");
 
     session_start();
-    if (isset($_SESSION["session_nombre"])) {
+    if (isset($_SESSION["jefe_venta"])) {
         session_destroy();
         header('Location: '.$URL.'/');
     }
 
+    if (isset($_SESSION['vendedor'])) {
+        session_destroy();
+        header('Location: '.$URL.'/');
+    }
 ?>

@@ -25,7 +25,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition sidebar-mini">
 
 <!-- Mensaje de ingreso exitoso -->
-<!-- <script>
+<?php
+  if(isset($_SESSION['mensaje'])){?>
+    <script>
     Swal.fire({
       position: "top-end",
       icon: "success",
@@ -33,7 +35,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       showConfirmButton: false,
       timer: 1500
     });
-</script> -->
+  </script>
+  <!-- Luego de mostrar el mensaje, destruirlo para que no se repita -->
+    <?php
+    unset($_SESSION["mensaje"]);
+  }
+?>
 
 
 <div class="wrapper">

@@ -8,7 +8,7 @@
 
   include("../app/config.php");
   // Reducimos codigo e importamos la verificacion
-  include("../layout/sesion.php");
+  include("../layout/sesion_vendedor.php");
 
   include("../layout/vendedor/parte1.php");?>
 

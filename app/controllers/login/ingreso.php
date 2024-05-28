@@ -19,17 +19,31 @@
         $email_tabla = $usuario['email'];
         $nombres = $usuario['nombres'];
         $password_user_tabla = $usuario['password_user'];
+        $rol_usuario = $usuario['id_rol'];
     }
 
     # Si el contador es 0, quiere decir que el usuario no existe, creamos una sesion con un mensaje.
     # Usamos password_verify con el dato obtenido del formulario y la contraseña de la tabla para verificar que sean la misma.
     if( ($contador > 0) && (password_verify($password_user, $password_user_tabla))) {
-        echo "Datos correctos";
-        session_start();
-        $_SESSION["session_nombre"] = $nombre;
+
+        // Creamos un mensaje de inicio de sesion exitoso
         session_start();
         $_SESSION["mensaje"] = "Bienvenido al sistema.".$nombre;
-        header('Location: '.$URL.'/Jefe_de_ventas');
+        
+        // Si el rol del usuario es 1, quiere decir que es jefe de ventas, por lo cual lo llevaremos a esa vista.
+        if( $rol_usuario == 1){
+            session_start();
+            $_SESSION["jefe_venta"] = $nombre;
+            header('Location: '.$URL.'/Jefe_de_ventas');
+            exit();
+
+        // De lo contrario, si su id es 2, quiere decir que es vendedor
+        }elseif( $rol_usuario == 2){
+            session_start();
+            $_SESSION['vendedor'] = $nombre;
+            header('Location: '.$URL.'/Vendedor');
+        }
+
     }else{
         echo "Datos incorrectos, vuelva a intentarlo";
         session_start();

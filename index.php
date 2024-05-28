@@ -58,7 +58,7 @@
 
   <!-- Logo del bazar aqui -->
   <center>
-    <img src="login/imagenes/1929276.jpg" alt="logo Bazar" width="100px">
+    <img src="imagenes/1929276.jpg" alt="logo Bazar" width="100px">
   </center>
 
 
