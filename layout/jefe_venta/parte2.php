@@ -9,6 +9,7 @@
       <p>Id: <br> <?php echo $id_usuario?></p>
       <p>Nombre: <br> <?php echo $nombre_sesion?></p>
       <p>Correo: <br> <?php echo $email_tabla?></p>
+      <p>Rol: <br> <?php echo $descripcion?></p>
       <p>Fecha y hora de creacion: <br> <?php echo $Fecha_creacion?></p>
       <p>Fecha y hora de modificacion: <br> <?php echo $Fecha_modificacion?></p>
     </div>
