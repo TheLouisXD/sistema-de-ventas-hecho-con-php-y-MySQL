@@ -16,6 +16,8 @@
         $descripcion = $usuario['descripcion'];
     }
 
+
+    // Cambiamos el nombre de la variable $descripcion para que se vea mas bonito xd
     if ($descripcion == 'Jefe_ventas'){
       $descripcion = "jefe de ventas";
     }
