@@ -10,7 +10,7 @@
   // Reducimos codigo e importamos la verificacion
   include("../layout/sesion.php");
 
-  include("../layout/parte1.php");?>
+  include("../layout/vendedor/parte1.php");?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -34,7 +34,7 @@
     <div class="content">
       <div class="container-fluid">
         
-        nada que ver aqui 👀
+        Estas en la vista de vendedor
 
       </div><!-- /.container-fluid -->
     </div>
@@ -43,4 +43,4 @@
   <!-- /.content-wrapper -->
 
 
-  <?php include("../layout/parte2.php"); ?>
+  <?php include("../layout/vendedor/parte2.php"); ?>

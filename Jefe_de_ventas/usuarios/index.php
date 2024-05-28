@@ -8,7 +8,7 @@
 
   include("../../app/controllers/usuarios/listado_de_usuarios.php");
 
-  include("../../layout/parte1.php");
+  include("../../layout/jefe_venta/parte1.php");
 
   // Añadimos un mensaje en caso de que se haya registrado un usuario con exito
   if (isset($_SESSION["mensaje"])){
@@ -103,4 +103,4 @@
   <!-- /.content-wrapper -->
 
 
-  <?php include("../../layout/parte2.php"); ?>
+  <?php include("../../layout/jefe_venta/parte2.php"); ?>

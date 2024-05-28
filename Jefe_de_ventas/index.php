@@ -10,7 +10,7 @@
   // Reducimos codigo e importamos la verificacion
   include("../layout/sesion.php");
 
-  include("../layout/parte1.php");?>
+  include("../layout/jefe_venta/parte1.php");?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -34,7 +34,11 @@
     <div class="content">
       <div class="container-fluid">
         
-        nada que ver aqui 👀
+        Estas en la vista de Jefe de ventas
+        <br>
+        <hr>
+        <img src="https://c.tenor.com/weB7SDBJ1lgAAAAC/tenor.gif" alt="">
+        <h1 style="font-family: Impact;">Espejo culiao hecho en html :0 </h1>
 
       </div><!-- /.container-fluid -->
     </div>
@@ -43,4 +47,4 @@
   <!-- /.content-wrapper -->
 
 
-  <?php include("../layout/parte2.php"); ?>
+  <?php include("../layout/jefe_venta/parte2.php"); ?>

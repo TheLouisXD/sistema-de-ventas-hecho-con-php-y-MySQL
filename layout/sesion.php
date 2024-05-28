@@ -1,6 +1,4 @@
 <!-- Este archivo hace la verificacion de sesion -->
-
-
 <?php
   session_start();
   if (isset($_SESSION["session_nombre"])){

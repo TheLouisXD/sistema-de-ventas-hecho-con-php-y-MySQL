@@ -6,7 +6,7 @@
   // Reducimos codigo e importamos la verificacion
   include("../../layout/sesion.php");
 
-  include("../../layout/parte1.php");
+  include("../../layout/jefe_venta/parte1.php");
 
   // Añadimos un mensaje en caso de que las contraseñas no sean identicas
   if (isset($_SESSION["mensaje"])){
@@ -20,7 +20,7 @@
     </script>
     <?php
     // Despues de mostrar el mensaje, destruimos la sesion
-     unset($_SESSION["mensaje"]);
+    unset($_SESSION["mensaje"]);
   }  
 ?>
 
@@ -106,4 +106,4 @@
   <!-- /.content-wrapper -->
 
 
-  <?php include("../../layout/parte2.php"); ?>
+  <?php include("../../layout/jefe_venta/parte2.php"); ?>

@@ -27,6 +27,8 @@
         echo "Datos correctos";
         session_start();
         $_SESSION["session_nombre"] = $nombre;
+        session_start();
+        $_SESSION["mensaje"] = "Bienvenido al sistema.".$nombre;
         header('Location: '.$URL.'/Jefe_de_ventas');
     }else{
         echo "Datos incorrectos, vuelva a intentarlo";
