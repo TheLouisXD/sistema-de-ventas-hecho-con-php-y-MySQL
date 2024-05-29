@@ -9,8 +9,8 @@
   include("../../../layout/jefe_venta/parte1.php");
 
   // Añadimos un mensaje en caso de que las contraseñas no sean identicas
-  if (isset($_SESSION["mensaje"])){
-    $respuesta = $_SESSION['mensaje']; ?>
+  if (isset($_SESSION["mensaje_error"])){
+    $respuesta = $_SESSION['mensaje_error']; ?>
     <script>
       Swal.fire({
         icon: "error",
@@ -20,7 +20,7 @@
     </script>
     <?php
     // Despues de mostrar el mensaje, destruimos la sesion
-    unset($_SESSION["mensaje"]);
+    unset($_SESSION["mensaje_error"]);
   }  
 ?>
 
@@ -62,7 +62,7 @@
                           <div class="col-md-12">
 
                             <!-- El formulario envia la informacion al controlador create.php para asi poder registrar los datos -->
-                            <form action="../../app/controllers/usuarios/create.php" method="post" autocomplete="off">
+                            <form action="../../../app/controllers/usuarios/create.php" method="post" autocomplete="off">
                               <div class="form-group">
                                 <!-- Hay que agregar el nombre a cada campo -->
                                 <label for="">Nombre y Apellido</label>
@@ -82,10 +82,10 @@
                               </div>
 
                               <!-- Agregamos el input para elegir rol del usuario -->
-                              <select class="custom-select" name="rol" id="inputGroupSelect01">
-                                <option selected disabled>Elija el rol del usuario</option>
-                                <option value="1">Jefe de ventas</option>
+                              <label for="">Rol del usuario</label>
+                              <select class="custom-select" name="rol" id="inputGroupSelect01" required>
                                 <option value="2">Vendedor</option>
+                                <option value="1">Jefe de ventas</option>
                               </select>
 
                               <hr>
