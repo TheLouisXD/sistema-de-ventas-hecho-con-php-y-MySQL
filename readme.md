@@ -10,6 +10,8 @@ Este proyecto consiste en crea un sistema de ventas con la ayuda de un curso de 
 - HTML
 - SweetAlert2
 
+Link de la documentacion: https://bright-drop-872.notion.site/Sistema-de-ventas-9d5925a318fe40f490d2cefe6d6e7da2?pvs=4
+
 Link del curso: https://youtu.be/Wlm_nTnRhIo?si=A4TD6j7lIp7CDgWo
 
 (Para hacer funcionar el sistema es recomendable seguir los primero videos del curso, alli se detalla como levantar el servidor y correr el codigo PHP)
