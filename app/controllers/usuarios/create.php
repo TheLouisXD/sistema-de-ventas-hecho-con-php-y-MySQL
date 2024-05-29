@@ -35,13 +35,13 @@
         // iniciamos sesion con un mensaje de exito
         session_start();
         $_SESSION["mensaje"] = $nombres;
-        header("Location:".$URL."/Jefe_de_ventas/usuarios");
+        header("Location:".$URL."/vistas/Jefe_de_ventas/usuarios");
 
     } else {
         // Creamos una sesion con un mensaje de error.
         session_start();
         $_SESSION["mensaje"] = "Error, las contraseñas no son identicas";
-        header("Location:".$URL."/Jefe_de_ventas/usuarios/create.php");
+        header("Location:".$URL."/vistas/Jefe_de_ventas/usuarios/create.php");
     }
 ?>
 

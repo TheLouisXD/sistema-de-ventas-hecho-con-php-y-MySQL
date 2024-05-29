@@ -2,13 +2,13 @@
 
 <?php
 
-  include("../../app/config.php");
+  include("../../../app/config.php");
   // Reducimos codigo e importamos la verificacion
-  include("../../layout/sesion_jefe_venta.php");
+  include("../../../layout/sesion_jefe_venta.php");
 
-  include("../../app/controllers/usuarios/listado_de_usuarios.php");
+  include("../../../app/controllers/usuarios/listado_de_usuarios.php");
 
-  include("../../layout/jefe_venta/parte1.php");
+  include("../../../layout/jefe_venta/parte1.php");
 
   // Añadimos un mensaje en caso de que se haya registrado un usuario con exito
   if (isset($_SESSION["mensaje"])){
@@ -103,4 +103,4 @@
   <!-- /.content-wrapper -->
 
 
-  <?php include("../../layout/jefe_venta/parte2.php"); ?>
+  <?php include("../../../layout/jefe_venta/parte2.php"); ?>

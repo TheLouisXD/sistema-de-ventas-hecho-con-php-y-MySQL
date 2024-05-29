@@ -34,14 +34,14 @@
         if( $rol_usuario == 1){
             session_start();
             $_SESSION["jefe_venta"] = $nombre;
-            header('Location: '.$URL.'/Jefe_de_ventas');
+            header('Location: '.$URL.'/vistas/Jefe_de_ventas');
             exit();
 
         // De lo contrario, si su id es 2, quiere decir que es vendedor
         }elseif( $rol_usuario == 2){
             session_start();
             $_SESSION['vendedor'] = $nombre;
-            header('Location: '.$URL.'/Vendedor');
+            header('Location: '.$URL.'/vistas/Vendedor');
         }
 
     }else{

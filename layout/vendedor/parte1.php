@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </li>
       <!-- Ponemos el nombre del bazar -->
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?php echo $URL?>/Vendedor" class="nav-link">los monitos de la nona</a>
+        <a href="<?php echo $URL?>/vistas/Vendedor" class="nav-link">los monitos de la nona</a>
       </li>
 
       <!-- Creamos un boton que llama al archivo que cierra la sesion -->
@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Logo del sistema, tambien redirige a la pantalla principal -->
-    <a href="<?php echo $URL?>/Vendedor" class="brand-link">
+    <a href="<?php echo $URL?>/vistas/Vendedor" class="brand-link">
       <img src="<?php echo $URL?>/imagenes/Logo.png" alt="Bazar Logo" class="brand-image elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Los monitos de la nona</span>
     </a>
@@ -118,7 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <!-- Quitamos el active para que no se resalte el boton -->
-                <a href="<?php echo $URL;?>/Jefe_de_ventas/usuarios" class="nav-link">
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/usuarios" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Listado de usuarios</p>
                 </a>
