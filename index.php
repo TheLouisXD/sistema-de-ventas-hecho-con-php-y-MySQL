@@ -56,6 +56,10 @@
     }
   ?>
 
+  <?php
+    session_destroy();
+  ?>
+
   <!-- Logo del bazar aqui -->
   <center>
     <img src="imagenes/1929276.jpg" alt="logo Bazar" width="100px">

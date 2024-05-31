@@ -30,12 +30,11 @@
         session_start();
         $_SESSION["mensaje"] = "Bienvenido al sistema.".$nombre;
         
-        // Si el rol del usuario es 1, quiere decir que es jefe de ventas, por lo cual lo llevaremos a esa vista.
+        // Si el rol del usuario es 1, quiere decir que es jefe de ventas, por lo cual lo llevaremos a la pagina de eleccion de rol.
         if( $rol_usuario == 1){
             session_start();
-            $_SESSION["jefe_venta"] = $nombre;
-            header('Location: '.$URL.'/vistas/Jefe_de_ventas');
-            exit();
+            $_SESSION["choice"] = $nombre;
+            header('Location: '.$URL.'/vistas/choice');
 
         // De lo contrario, si su id es 2, quiere decir que es vendedor
         }elseif( $rol_usuario == 2){
