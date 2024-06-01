@@ -51,17 +51,18 @@
       <div class="container-fluid">
         <!-- Aqui creamos una tarjeta para listado de usuarios -->
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card card-outline card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Usuarios</h3>
+                        <!-- Agregamos un boton para minimizar la tabla -->
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                         </div>
                     </div>
                     <!-- Insertamos una tabla en la tarjeta -->
                     <div class="card-body">
-                        <table class="table table-bordered table-hover">
+                        <table id="tabla_usuarios" class="table table-bordered table-hover">
                           <!-- Cambiamos el color de la cabecera de la tabla -->
                             <thead class="thead-dark">
                                 <th>ID</th>
@@ -103,4 +104,16 @@
   <!-- /.content-wrapper -->
 
 
+
   <?php include("../../../layout/jefe_venta/parte2.php"); ?>
+
+    <!-- Script para ejecutar DataTable, lo colocamos aqui por que este script requiere de unos plugisn que son importados en parte2.php -->
+    <script>
+    $(function () {
+      $("#tabla_usuarios").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        // para que funcionen los botones, debemos poner el nombre de la tabla seguido de _wrapper
+      }).buttons().container().appendTo('#tabla_usuarios_wrapper .col-md-6:eq(0)');
+    });
+  </script>
