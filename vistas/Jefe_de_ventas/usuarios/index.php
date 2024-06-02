@@ -18,7 +18,7 @@
     <script>
       Swal.fire({
         icon: "success",
-        Title: "Se ha registrado al usuario <?php echo $respuesta?>",
+        text: "Se ha registrado al usuario ".$respuesta,
         timer: 5000
       });
     </script>
@@ -79,6 +79,9 @@
                                     $contador = 0;
                                     // por cada usuario se imprimira informacion
                                     foreach($datos_usuarios as $usuario_dato){
+                                      // recibimos el id del usuario y lo guardamos en una variable
+                                      $id_usuario = $usuario_dato['id_usuario'];
+
                                       $contador = $contador + 1; ?>
                                     <!-- concatenamos html para llenar la tabla con la informacion de la base de datos que necesitamos -->
                                     <tr>
@@ -88,15 +91,16 @@
                                         <td>
                                           <!-- Aqui ponemos los botones de accion en la tabla de usuarios -->
                                         <center><div type="button" class="btn-group">
-                                            <button class="btn btn-info"> Ver
+                                          <!-- Este boton nos lleva  a la vista "show.php" junto con el id del usuario que queremos ver más informacion -->
+                                            <a href="show.php?id=<?php echo $id_usuario?>;" class="btn btn-info"> Ver
                                               <i class="fas fa-user-circle"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-success">
+                                            </a>
+                                            <a type="button" class="btn btn-success">
                                               <i class="fas fa-edit"></i> Editar
-                                            </button>
-                                            <button type="button" class="btn  btn-danger">
+                                            </a>
+                                            <a type="button" class="btn  btn-danger">
                                               <i class="fas fa-trash"></i> Eliminar
-                                            </button>
+                                            </a>
                                           </div></center>
                                         </td>
                                     </tr>
