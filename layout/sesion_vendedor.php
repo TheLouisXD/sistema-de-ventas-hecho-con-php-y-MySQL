@@ -18,7 +18,8 @@
     }
 
   }else{
-    echo "no existe sesion";
+    session_start();
+    $_SESSION["mensaje"] = "No tienes permisos para ver esto!!!!";
     header("Location: ".$URL."");
   }
 ?>
