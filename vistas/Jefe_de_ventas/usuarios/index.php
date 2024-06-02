@@ -68,6 +68,7 @@
                                 <th>Nro</th>
                                 <th>Nombre</th>
                                 <th>Correo</th>
+                                <th>Acciones</th>
                             </thead>
                             <!-- Agregamos el codigo correspondiente para mostrar la informacion obtenida en el controlador de listado de usuarios -->
                             <tbody>
@@ -84,6 +85,20 @@
                                         <td><?php echo $contador;?></td>
                                         <td><?php echo $usuario_dato['nombres'];?></td>
                                         <td><?php echo $usuario_dato['email'];?></td>
+                                        <td>
+                                          <!-- Aqui ponemos los botones de accion en la tabla de usuarios -->
+                                        <center><div type="button" class="btn-group">
+                                            <button class="btn btn-info"> Ver
+                                              <i class="fas fa-user-circle"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-success">
+                                              <i class="fas fa-edit"></i> Editar
+                                            </button>
+                                            <button type="button" class="btn  btn-danger">
+                                              <i class="fas fa-trash"></i> Eliminar
+                                            </button>
+                                          </div></center>
+                                        </td>
                                     </tr>
                                     <!-- Cuando ya terminamos de insertar la informacion, volvemos a abrir el codigo php para asi poder hacer que el codigo funcione :D -->
                                 <?php
