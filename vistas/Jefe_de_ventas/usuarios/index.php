@@ -65,7 +65,7 @@
                         <table id="tabla_usuarios" class="table table-bordered table-hover">
                           <!-- Cambiamos el color de la cabecera de la tabla -->
                             <thead class="thead-dark">
-                                <th>ID</th>
+                                <th>Nro</th>
                                 <th>Nombre</th>
                                 <th>Correo</th>
                             </thead>
@@ -111,8 +111,46 @@
     <script>
     $(function () {
       $("#tabla_usuarios").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+          // Aqui elegimos cuantos elementos se muestran por pagina
+          "pageLength": 5,
+          // Cambiamos el idioma de dataTables
+          language: {
+              "emptyTable": "No hay información",
+              "decimal": "",
+              "info": "Mostrando _START_ a _END_ de _TOTAL_ Usuarios",
+              "infoEmpty": "Mostrando 0 to 0 of 0 Usuarios",
+              "infoFiltered": "(Filtrado de _MAX_ total Usuarios)",
+              "infoPostFix": "",
+              "thousands": ",",
+              "lengthMenu": "Mostrar _MENU_ Usuarios",
+              "loadingRecords": "Cargando...",
+              "processing": "Procesando...",
+              "search": "Buscador:",
+              "zeroRecords": "Sin resultados encontrados",
+              "paginate": {
+                  "first": "Primero",
+                  "last": "Ultimo",
+                  "next": "Siguiente",
+                  "previous": "Anterior"
+              }
+            },
+          /* fin de idiomas */
+
+        "responsive": true, "lengthChange": true, "autoWidth": true,
+        // Cambiamos lo botones para que se vea más limpia la interfaz, haciendo que las funciones de exportar y la visibilidad de las columnas sean botones separados
+        "buttons": [{
+          extend: 'collection',
+          text: 'Exportar',
+          orientation: 'landscape',
+          buttons:[{text: 'copiar', extend: 'copy'},
+                    "csv", 
+                    "excel",
+                    "pdf",
+                    {text: 'Imprimir' , extend:"print"}] 
+        },
+        { text: 'ver columnas',
+          extend:"colvis"}
+        ]
         // para que funcionen los botones, debemos poner el nombre de la tabla seguido de _wrapper
       }).buttons().container().appendTo('#tabla_usuarios_wrapper .col-md-6:eq(0)');
     });
