@@ -59,48 +59,36 @@
                         </div>
                     </div>
 
-                    <!-- Creamos el formulario de registro de usuarios en la tarjeta -->
                     <div class="card-body">
                         <div class="row">
                           <div class="col-md-12">
-
-                            <!-- El formulario envia la informacion al controlador create.php para asi poder registrar los datos -->
-                            <form action="../../../app/controllers/usuarios/create.php" method="post" autocomplete="off">
                               <div class="form-group">
-                                <!-- Hay que agregar el nombre a cada campo -->
-                                <label for="">Nombre y Apellido</label>
-                                <input type="text" name="Nombres" class="form-control" placeholder="Ejemplo: Luis Perez" required>
+                                <!-- Mostramos la informacion recuperada en el archivo /controllers/usuarios/show.php -->
+                                <center><label for="">Nombre y Apellido</label></center>
+                                <input type="text" name="nombre" readonly class="form-control-plaintext text-center" value="<?php echo $nombres?>">
                               </div>
                               <div class="form-group">
-                                <label for="">E-mail</label>
-                                <input type="email" name="email" class="form-control" placeholder="Ejemplo: Luis.Perez@gmail.com" required>
+                                <center><label for="">E-mail</label></center>
+                                <input type="text" name="email" readonly class="form-control-plaintext text-center" value="<?php echo $email?>">
                               </div>
                               <div class="form-group">
-                                <label for="">Contraseña</label>
-                                <input type="text" name="password_user" class="form-control" required>
+                                <center><label for="">Rol</label></center>
+                                <input type="text" name="rol" readonly class="form-control-plaintext text-center" value="<?php echo $rol_usuario?>">
                               </div>
                               <div class="form-group">
-                                <label for="">Repita la contraseña</label>
-                                <input type="text" name="password_repeat" class="form-control" required>
+                                <center><label for="">Fecha y hora de creacion</label></center>
+                                <input type="text" name="FyHcreacion" readonly class="form-control-plaintext text-center" value="<?php echo $Fecha_creacion?>">
                               </div>
-
-                              <!-- Agregamos el input para elegir rol del usuario -->
-                              <label for="">Rol del usuario</label>
-                              <select class="custom-select" name="rol" id="inputGroupSelect01" required>
-                                <option value="2">Vendedor</option>
-                                <option value="1">Jefe de ventas</option>
-                              </select>
+                              <div class="form-group">
+                                <center><label for="">Fecha y hora de actualización</label></center>
+                                <input type="text" name="FyHactualizacion" readonly class="form-control-plaintext text-center" value="<?php echo $Fecha_modificacion?>">
+                              </div>
 
                               <hr>
-                              <!-- Agregamos los botones -->
+                              <!-- Agregamos un boton para volver a la pagina anterior -->
                               <div class="form-group">
-                                <!-- Este boton nos envia a el listado de usuarios -->
-                                <a class="btn btn-secondary" href="index.php">Cancelar</a>
-                                <!-- Este boton envia la informaciond del formulario -->
-                                <button class="btn btn-primary" type="submit">Guardar</button>
+                                <button class="btn btn-primary" onclick="history.back()">Volver</button>
                               </div>
-
-                            </form>
                           </div>
                         </div>
                     </div>
