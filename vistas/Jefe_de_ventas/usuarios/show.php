@@ -1,5 +1,4 @@
 <!-- Este archivo mostrara la informacion del usuario del que se desea saber más informacion, esto dandole click al botn "ver" en la tabla de usuarios -->
-<!-- En este modulo incluimos la funcionalidad de creacion de usuarios en la base de datos -->
 
 <?php
 
@@ -9,7 +8,7 @@
 
   include("../../../layout/jefe_venta/parte1.php");
 
-    include("../../../app/controllers/usuarios/show.php");
+    include("../../../app/controllers/usuarios/show_usuario.php");
 
   // Añadimos un mensaje en caso de que las contraseñas no sean identicas
   if (isset($_SESSION["mensaje_error"])){
@@ -35,7 +34,7 @@
         <div class="row mb-2">
           <!-- Borramos el contenido de ejemplo y aumentamos a 12 columnas -->
           <div class="col-sm-12">
-            <h1 class="m-0">Registro de usuarios</h1>
+            <h1 class="m-0">Más informacion</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -53,10 +52,10 @@
           <div class="col-md-5">
           <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Creacion de usuarios</h3>
-                        <div class="card-tools">
+                        <h3 class="card-title"><?php echo $nombres?></h3>
+                        <!-- <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="card-body">

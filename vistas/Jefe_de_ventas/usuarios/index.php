@@ -18,14 +18,25 @@
     <script>
       Swal.fire({
         icon: "success",
-        text: "Se ha registrado al usuario ".$respuesta,
+        text: "<?php echo $respuesta?>",
         timer: 5000
       });
     </script>
     <?php
     // Despues de mostrar el mensaje, destruimos la sesion
     unset($_SESSION["mensaje_exito"]);
-  }  
+  } elseif (isset($_SESSION["mensaje_error"])){
+    $respuesta = $_SESSION["mensaje_error"]; ?>
+
+    <script>
+      Swal.fire({
+        icon: "error",
+        text: "<?php echo $respuesta?>",
+        timer: 5000
+      });
+    </script> <?php
+    unset($_SESSION["mensaje_error"]);
+  }
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -92,10 +103,10 @@
                                           <!-- Aqui ponemos los botones de accion en la tabla de usuarios -->
                                         <center><div type="button" class="btn-group">
                                           <!-- Este boton nos lleva  a la vista "show.php" junto con el id del usuario que queremos ver más informacion -->
-                                            <a href="show.php?id=<?php echo $id_usuario?>;" class="btn btn-info"> Ver
+                                            <a href="show.php?id=<?php echo $id_usuario?>" class="btn btn-info"> Ver
                                               <i class="fas fa-user-circle"></i>
                                             </a>
-                                            <a type="button" class="btn btn-success">
+                                            <a href="update.php?id=<?php echo $id_usuario?>"  type="button" class="btn btn-success">
                                               <i class="fas fa-edit"></i> Editar
                                             </a>
                                             <a type="button" class="btn  btn-danger">

@@ -5,7 +5,7 @@
     $id_usuario_get = $_GET['id'];
 
     // Ejecutamos la sentencia sql en donde recuperara la informacion del usuario con el id recuperado
-    $sql_usuario = "SELECT tb_usuarios.id_usuario, tb_usuarios.nombres, tb_usuarios.email, tb_usuarios.password_user,tb_usuarios.FyH_creacion, tb_usuarios.FyH_actualizacion, tb_rol.descripcion FROM tb_usuarios INNER JOIN tb_rol ON tb_usuarios.id_rol = tb_rol.id WHERE id_usuario = '$id_usuario_get';";
+    $sql_usuario = "SELECT tb_usuarios.id_usuario, tb_usuarios.nombres, tb_usuarios.email, tb_usuarios.password_user,tb_usuarios.FyH_creacion, tb_usuarios.FyH_actualizacion, tb_rol.descripcion FROM tb_usuarios INNER JOIN tb_rol ON tb_usuarios.id_rol = tb_rol.id_rol WHERE id_usuario = '$id_usuario_get';";
     $query_usuario = $pdo->prepare($sql_usuario);
     $query_usuario->execute();
     $datos_usuario = $query_usuario->fetchAll(PDO::FETCH_ASSOC);
@@ -18,7 +18,4 @@
         $Fecha_modificacion = $usuario_dato['FyH_actualizacion'];
     }
 
-    if ($rol_usuario == 'Jefe_ventas'){
-        $rol_usuario = "Jefe de ventas";
-      }
 ?>
