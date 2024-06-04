@@ -3,7 +3,7 @@
 
      // obtenemos los datos del formulario
 
-    $id_usuario = $_POST['$id_usuario_get'];
+    $id_usuario = $_POST['id_usuario_get'];
     $nombres = $_POST['Nombres'];
     $email = $_POST['email'];
     $password_user = $_POST['password_user'];
