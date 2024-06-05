@@ -30,24 +30,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 <body class="hold-transition sidebar-mini">
 
-<!-- Mensaje de ingreso exitoso -->
-<?php
-  if(isset($_SESSION['mensaje'])){?>
-    <script>
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Bienvenido al sistema <?php echo $nombre_sesion ?>",
-      showConfirmButton: false,
-      timer: 1500
-    });
-  </script>
-  <!-- Luego de mostrar el mensaje, destruirlo para que no se repita -->
-    <?php
-    unset($_SESSION["mensaje"]);
-  }
-?>
-
 
 <div class="wrapper">
   <!-- Navbar -->

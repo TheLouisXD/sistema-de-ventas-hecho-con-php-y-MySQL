@@ -34,13 +34,15 @@
 
         // iniciamos sesion con un mensaje de exito
         session_start();
-        $_SESSION["mensaje_exito"] = "El usuario ".$nombres." fue registrado con exito";
+        $_SESSION["mensaje"] = "El usuario ".$nombres." fue registrado con exito";
+        $_SESSION['icono'] = "success";
         header("Location:".$URL."/vistas/Jefe_de_ventas/usuarios");
 
     } else {
         // Creamos una sesion con un mensaje de error.
         session_start();
-        $_SESSION["mensaje_error"] = "Error, las contraseñas no son identicas";
+        $_SESSION["mensaje"] = "Error, las contraseñas no son identicas";
+        $_SESSION['icono'] = "error";
         header("Location:".$URL."/vistas/Jefe_de_ventas/usuarios/create.php");
     }
 ?>

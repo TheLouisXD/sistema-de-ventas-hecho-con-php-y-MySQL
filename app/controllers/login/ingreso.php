@@ -28,7 +28,8 @@
 
         // Creamos un mensaje de inicio de sesion exitoso
         session_start();
-        $_SESSION["mensaje"] = "Bienvenido al sistema.".$nombre;
+        $_SESSION["mensaje"] = "Bienvenido al sistema ".$nombre;
+        $_SESSION["icono"] = "success";
         
         // Si el rol del usuario es 1, quiere decir que es jefe de ventas, por lo cual lo llevaremos a la pagina de eleccion de rol.
         if( $rol_usuario == 1){
@@ -44,9 +45,9 @@
         }
 
     }else{
-        echo "Datos incorrectos, vuelva a intentarlo";
         session_start();
         $_SESSION["mensaje"] = "Error, datos incorrectos o no existen";
+        $_SESSION["icono"] = "error";
         header("Location: ".$URL."");
     }
 ?>

@@ -31,34 +31,13 @@
 <body class="hold-transition login-page">
 <div class="login-box">
 
-<!-- Codigo php con sweetalert2 que permite mostrar un mensaje cuando los datos ingresados no son correctos -->
+<!-- importamos el mensaje -->
   <?php
-    session_start();
-    if(isset($_SESSION["mensaje"])){
-      $respuesta = $_SESSION["mensaje"]; ?>
-      <script>
-        Swal.fire({
-          title: "Error: datos no encontrados",
-          width: 600,
-          padding: "3em",
-          color: "#716add",
-          background: "#fff url(/images/trees.png)",
-          backdrop: `
-            rgba(0,0,123,0.4)
-            url("imagenes/nyan-cat.gif")
-            left top
-            no-repeat
-          `
-        });
-      </script>
-    <?php
-    unset($_SESSION["mensaje"]);
-    }
+  session_start();
+    include("layout/mensajes.php");
   ?>
 
-  <?php
-    session_destroy();
-  ?>
+
 
   <!-- Logo del bazar aqui -->
   <center>
@@ -117,5 +96,12 @@
 <script src="public/templates/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="public/templates/AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
+
+
+<!-- Destruimos todas las sesiones en caso de que vuelva a mostrarse el login por razones de seguridad -->
+<?php
+    session_destroy();
+  ?>
+  
 </body>
 </html>
