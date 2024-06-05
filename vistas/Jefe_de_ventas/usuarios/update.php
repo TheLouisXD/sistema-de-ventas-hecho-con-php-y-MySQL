@@ -8,22 +8,10 @@
 
   include("../../../layout/jefe_venta/parte1.php");
 
-    include("../../../app/controllers/usuarios/update_usuario.php");
+  include("../../../app/controllers/usuarios/update_usuario.php");
 
-  // Añadimos un mensaje en caso de que las contraseñas no sean identicas
-  if (isset($_SESSION["mensaje_error"])){
-    $respuesta = $_SESSION['mensaje_error']; ?>
-    <script>
-      Swal.fire({
-        icon: "error",
-        Text: "<?php echo $respuesta?>",
-        timer: 5000
-      });
-    </script>
-    <?php
-    // Despues de mostrar el mensaje, destruimos la sesion
-    unset($_SESSION["mensaje_error"]);
-  }  
+  include("../../../layout/mensajes.php");
+
 ?>
 
   <!-- Content Wrapper. Contains page content -->
