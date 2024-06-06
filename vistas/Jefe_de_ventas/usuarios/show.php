@@ -11,19 +11,7 @@
     include("../../../app/controllers/usuarios/show_usuario.php");
 
   // Añadimos un mensaje en caso de que las contraseñas no sean identicas
-  if (isset($_SESSION["mensaje_error"])){
-    $respuesta = $_SESSION['mensaje_error']; ?>
-    <script>
-      Swal.fire({
-        icon: "error",
-        Text: "<?php echo $respuesta?>",
-        timer: 5000
-      });
-    </script>
-    <?php
-    // Despues de mostrar el mensaje, destruimos la sesion
-    unset($_SESSION["mensaje_error"]);
-  }  
+  include("../../../layout/mensajes.php");
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -86,7 +74,7 @@
                               <hr>
                               <!-- Agregamos un boton para volver a la pagina anterior -->
                               <div class="form-group">
-                                <button class="btn btn-primary" onclick="history.back()">Volver</button>
+                                <button class="btn btn-primary" onclick="history.back()"><i class="fas fa-angle-left"></i> Volver</button>
                               </div>
                           </div>
                         </div>

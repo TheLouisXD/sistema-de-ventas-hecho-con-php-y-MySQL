@@ -77,13 +77,17 @@
                                           <!-- Aqui ponemos los botones de accion en la tabla de usuarios -->
                                         <center><div type="button" class="btn-group">
                                           <!-- Este boton nos lleva  a la vista "show.php" junto con el id del usuario que queremos ver más informacion -->
+
+                                          <!-- boton para ver la informacion del usuario -->
                                             <a href="show.php?id=<?php echo $id_usuario?>" class="btn btn-info"> Ver
                                               <i class="fas fa-user-circle"></i>
                                             </a>
+                                            <!-- boton para actualizar la informacion del usuario -->
                                             <a href="update.php?id=<?php echo $id_usuario?>"  type="button" class="btn btn-success">
                                               <i class="fas fa-edit"></i> Editar
                                             </a>
-                                            <a type="button" class="btn  btn-danger">
+                                            <!-- boton para eliminar al usuario -->
+                                            <a href="delete.php?id=<?php echo $id_usuario?>"  type="button" class="btn  btn-danger">
                                               <i class="fas fa-trash"></i> Eliminar
                                             </a>
                                           </div></center>
