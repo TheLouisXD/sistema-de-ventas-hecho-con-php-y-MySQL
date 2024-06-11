@@ -1,8 +1,8 @@
 <?php 
     // Añadimos un mensaje universal para todas las vistas
-  if ((isset($_SESSION["mensaje"])) && (isset($_SESSION['icono'])) ){
-    $respuesta = $_SESSION['mensaje'];
-    $icono = $_SESSION['icono'];
+  if ((isset($_SESSION["mensaje"])) && (isset($_SESSION["icono"])) ){
+    $respuesta = $_SESSION["mensaje"];
+    $icono = $_SESSION["icono"];
     ?>
     <script>
       Swal.fire({

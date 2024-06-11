@@ -53,6 +53,7 @@
                                 <th>Nro</th>
                                 <th>Nombre</th>
                                 <th>Correo</th>
+                                <th>Rol</th>
                                 <th>Acciones</th>
                             </thead>
                             <!-- Agregamos el codigo correspondiente para mostrar la informacion obtenida en el controlador de listado de usuarios -->
@@ -73,6 +74,12 @@
                                         <td><?php echo $contador;?></td>
                                         <td><?php echo $usuario_dato['nombres'];?></td>
                                         <td><?php echo $usuario_dato['email'];?></td>
+                                        <!-- Agregamos una logica para imprimir el rol del usuario en la tabla de usuarios basandonos en el id_rol del usuario -->
+                                        <td><?php if ($usuario_dato['id_rol'] == 1){
+                                                  echo "Jefe de ventas";
+                                                  }elseif ($usuario_dato['id_rol'] == 2){
+                                                  echo "Vendedor";
+                                                  }?></td>
                                         <td>
                                           <!-- Aqui ponemos los botones de accion en la tabla de usuarios -->
                                         <center><div type="button" class="btn-group">

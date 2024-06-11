@@ -24,6 +24,8 @@
   <style>
     body{
         background-image: url("https://i.pinimg.com/564x/c8/77/9f/c8779f09b14cb34c1702187db6f63154.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
   </style>
 
@@ -33,7 +35,7 @@
 
 <!-- importamos el mensaje -->
   <?php
-  session_start();
+    session_start();
     include("layout/mensajes.php");
   ?>
 
@@ -101,7 +103,7 @@
 <!-- Destruimos todas las sesiones en caso de que vuelva a mostrarse el login por razones de seguridad -->
 <?php
     session_destroy();
-  ?>
-  
+?>
+
 </body>
 </html>

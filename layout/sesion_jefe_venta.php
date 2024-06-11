@@ -22,10 +22,9 @@
       $descripcion = "jefe de ventas";
     }
 
-
   }else{
-    session_start();
-    $_SESSION["mensaje"] = "No tienes permisos para ver esto!!!!";
+    $_SESSION["mensaje"] = "No tienes permisos para ver esto";
+    $_SESSION["icono"] = "error";
     header("Location: ".$URL."");
   }
 
