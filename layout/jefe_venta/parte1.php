@@ -91,12 +91,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
+               <li class="nav-item ">
+                <!-- Quitamos el active para que no se resalte el boton -->
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/usuarios" class="nav-link ">
+                  <i class="far fa-user-circle nav-icon"></i>
+                  <p>Usuarios</p>
+                </a>
+              </li>
           <!-- le sacamos el menu-open para que no este siempre abierto -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link active">
 
-              <!-- Modificamos el boton -->
+              <!-- Modificamos el boton 
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Usuarios
@@ -105,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <!-- Quitamos el active para que no se resalte el boton -->
+              Quitamos el active para que no se resalte el boton 
                 <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/usuarios" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Listado de usuarios</p>
@@ -118,16 +124,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <!-- Añadimos el boton de cerrar sesion en la barra lateral -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="<?php echo $URL;?>/app/controllers/login/cerrar_sesion.php" class="nav-link" style="background-color: #ff4040">
               <i class="nav-icon fas fa-door-closed"></i>
               <p>
                 Cerrar sesion
               </p>
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

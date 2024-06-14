@@ -12,7 +12,10 @@
         session_start();
         // asignamos el nombre que se encontraba en la sesion choice y se lo asignamos a la nueva sesion
         $_SESSION['jefe_venta'] = $_SESSION['choice'];
+        $nombre = $_SESSION['choice'];
         unset($_SESSION['choice']);
+        $_SESSION["mensaje"] = "Bienvenido al sistema ".$nombre;
+        $_SESSION["icono"] = "success";
         // redirigimos a la vista de jefe de ventas
         header('Location: '.$URL.'/vistas/Jefe_de_ventas');
 
@@ -20,7 +23,10 @@
         session_start();
         // asignamos el nombre que se encontraba en la sesion choice y se lo asignamos a la nueva sesion
         $_SESSION['vendedor'] = $_SESSION['choice'];
+        $nombre = $_SESSION['choice'];
         unset($_SESSION['choice']);
+        $_SESSION["mensaje"] = "Bienvenido al sistema ".$nombre;
+        $_SESSION["icono"] = "success";
         // redirigimos a la vista de vendedor
         header('Location: '.$URL.'/vistas/Vendedor');
     }else{

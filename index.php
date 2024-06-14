@@ -79,7 +79,7 @@
           </div>
           <!-- /.col -->
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+            <button type="submit" class="btn btn-primary btn-block">Ingresar <span class="fas fa-arrow-right"></span> </button>
           </div>
           
           <!-- /.col -->
