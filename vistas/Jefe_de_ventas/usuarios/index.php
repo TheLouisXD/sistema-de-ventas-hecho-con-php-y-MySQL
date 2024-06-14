@@ -8,6 +8,9 @@
 
   include("../../../app/controllers/usuarios/listado_de_usuarios.php");
 
+  // Asignamos el texto "active" para que en el layout, el boton se resalte cuando se acceda a esta vista
+  $btn_usuarios = "active";
+
   include("../../../layout/jefe_venta/parte1.php");
 
   include("../../../layout/mensajes.php");

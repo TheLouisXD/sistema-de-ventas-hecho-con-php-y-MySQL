@@ -92,8 +92,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item ">
-                <!-- Quitamos el active para que no se resalte el boton -->
-                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/usuarios" class="nav-link ">
+                <!-- Creamos una variable btn_usuarios vacia para que el boton no resalte -->
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/usuarios" class="nav-link <?php echo $btn_usuarios?>">
                   <i class="far fa-user-circle nav-icon"></i>
                   <p>Usuarios</p>
                 </a>
