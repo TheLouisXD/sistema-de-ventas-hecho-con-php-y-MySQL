@@ -45,7 +45,7 @@
                         <h3 class="card-title">Usuarios</h3>
                         <!-- Agregamos un boton para minimizar la tabla -->
                         <div class="card-tools">
-                        <a href="http://localhost/www.sistemadeventas.com%202/vistas/Jefe_de_ventas/usuarios/create.php" class="btn btn-success"><i class="fas fa-plus-circle"></i> Crear usuario</a>
+                        <a href="http://localhost/www.sistemadeventas.com%202/vistas/Jefe_de_ventas/usuarios/create.php" class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i> Crear usuario</a>
                         </div>
                     </div>
                     <!-- Insertamos una tabla en la tarjeta -->

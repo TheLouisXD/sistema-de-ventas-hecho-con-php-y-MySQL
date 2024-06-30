@@ -97,6 +97,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <i class="far fa-user-circle nav-icon"></i>
                   <p>Usuarios</p>
                 </a>
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php echo $btn_inventario?>">
+                  <i class="far fa-user-circle nav-icon"></i>
+                  <p>inventario</p>
+                </a>
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php echo $btn_admin?>">
+                  <i class="far fa-user-circle nav-icon"></i>
+                  <p>Administrar sistema</p>
+                </a>
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php echo $btn_informes?>">
+                  <i class="far fa-user-circle nav-icon"></i>
+                  <p>Informe de ventas</p>
+                </a>
               </li>
           <!-- le sacamos el menu-open para que no este siempre abierto -->
           <!-- <li class="nav-item">
