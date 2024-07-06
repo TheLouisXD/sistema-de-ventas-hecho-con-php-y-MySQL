@@ -8,7 +8,7 @@
 
   include("../../../layout/jefe_venta/parte1.php");
 
-  include("../../../app/controllers/usuarios/update_usuario.php");
+  include("../../../app/controllers/jefe_ventas/usuarios/update_usuario.php");
 
   include("../../../layout/mensajes.php");
 
@@ -49,7 +49,7 @@
                     <div class="card-body">
                         <div class="row">
                           <div class="col-md-12">
-                            <form action="../../../app/controllers/usuarios/update.php" method="post" autocomplete="off">
+                            <form action="../../../app/controllers/jefe_ventas/usuarios/update.php" method="post" autocomplete="off">
                                     <input type="text" name="id_usuario_get" value="<?php echo $id_usuario_get?>" hidden>
                                 <div class="form-group">
                                     <label for="">Nombre y Apellido</label>

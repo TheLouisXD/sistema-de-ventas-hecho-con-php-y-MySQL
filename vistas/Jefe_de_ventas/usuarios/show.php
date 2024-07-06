@@ -8,7 +8,7 @@
 
   include("../../../layout/jefe_venta/parte1.php");
 
-    include("../../../app/controllers/usuarios/show_usuario.php");
+    include("../../../app/controllers/jefe_ventas/usuarios/show_usuario.php");
 
   // Añadimos un mensaje en caso de que las contraseñas no sean identicas
   include("../../../layout/mensajes.php");

@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Logo del sistema, tambien redirige a la pantalla principal -->
     <a href="<?php echo $URL?>/vistas/Jefe_de_ventas" class="brand-link">
       <img src="<?php echo $URL?>/imagenes/Logo.png" alt="Bazar Logo" class="brand-image elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Los monitos de la nona</span>
+      <span class="brand-text font-weight-light">Las nonitas</span>
     </a>
 
     <!-- Sidebar -->
@@ -97,14 +97,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <i class="far fa-user-circle nav-icon"></i>
                   <p>Usuarios</p>
                 </a>
+              </li>
+              <!-- Creamos un nav-item por cada boton para que se vea bien y bonito :3 -->
+              <li class="nav-item">
                 <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php echo $btn_inventario?>">
                   <i class="far fa-user-circle nav-icon"></i>
                   <p>inventario</p>
                 </a>
+              </li>
+              <li class="nav-item">
                 <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php echo $btn_admin?>">
                   <i class="far fa-user-circle nav-icon"></i>
                   <p>Administrar sistema</p>
                 </a>
+              </li>
+              <li class="nav-item">
                 <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php echo $btn_informes?>">
                   <i class="far fa-user-circle nav-icon"></i>
                   <p>Informe de ventas</p>

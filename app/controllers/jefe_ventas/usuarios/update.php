@@ -1,5 +1,5 @@
 <?php
-    include("../../config.php");
+    include("../../../config.php");
 
      // obtenemos los datos del formulario
 

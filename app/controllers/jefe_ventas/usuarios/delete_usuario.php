@@ -1,5 +1,5 @@
 <?php
-    include("../../config.php");
+    include("../../../config.php");
 
      // obtenemos los datos del formulario
 
@@ -15,6 +15,13 @@
 
         // Ejecutamos la sentencia
         $sentencia->execute();
+
+        // Recuperamos el nombre
+        $datos_usuario = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($datos_usuario as $usuario_dato) {
+            $nombres = $usuario_dato['nombres'];
+        }
 
         // iniciamos sesion con un mensaje de exito
         session_start();

@@ -8,7 +8,7 @@
 
   include("../../../layout/jefe_venta/parte1.php");
 
-    include("../../../app/controllers/usuarios/show_usuario.php");
+    include("../../../app/controllers/jefe_ventas/usuarios/show_usuario.php");
 
   include("../../../layout/mensajes.php");
 ?>
@@ -48,7 +48,7 @@
                     <div class="card-body">
                         <div class="row">
                           <div class="col-md-12">
-                              <form action="../../../app/controllers/usuarios/delete_usuario.php" method="post">
+                              <form action="../../../app/controllers/jefe_ventas/usuarios/delete_usuario.php" method="post">
                                 <div class="form-group">
                                     <!-- Mostramos la informacion recuperada en el archivo /controllers/usuarios/show.php -->
                                     <input type="text" name="id_usuario" value="<?php echo $id_usuario_get?>" hidden>
