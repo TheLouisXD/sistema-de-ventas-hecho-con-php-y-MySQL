@@ -19,7 +19,7 @@
         <div class="row mb-2">
           <!-- Borramos el contenido de ejemplo y aumentamos a 12 columnas -->
           <div class="col-sm-12">
-            <h1 class="m-0">Registro de usuarios</h1>
+            <h1 class="m-0">Registro de producto</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -37,7 +37,7 @@
           <div class="col-md-5">
           <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Creacion de usuarios</h3>
+                        <h3 class="card-title">Creacion de productos</h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                         </div>
@@ -49,37 +49,35 @@
                           <div class="col-md-12">
 
                             <!-- El formulario envia la informacion al controlador create.php para asi poder registrar los datos -->
-                            <form action="../../../app/controllers/jefe_ventas/usuarios/create.php" method="post" autocomplete="off">
+                            <form action="../../../app/controllers/jefe_ventas/inventario/create_producto.php" method="post" autocomplete="off">
+                              
                               <div class="form-group">
                                 <!-- Hay que agregar el nombre a cada campo -->
-                                <label for="">Nombre y Apellido</label>
-                                <input type="text" name="Nombres" class="form-control" placeholder="Ejemplo: Luis Perez" required>
+                                <label for="">Nombre</label>
+                                <input type="text" name="nombre" class="form-control" placeholder="Ejemplo: Bebida" required>
                               </div>
                               <div class="form-group">
-                                <label for="">E-mail</label>
-                                <input type="email" name="email" class="form-control" placeholder="Ejemplo: Luis.Perez@gmail.com" required>
+                                <label for="">Codigo SKU</label>
+                                <input type="text" name="codigo" class="form-control" placeholder="Ejemplo: CEL-MOT-G50-16" required>
                               </div>
                               <div class="form-group">
-                                <label for="">Contraseña</label>
-                                <input type="text" name="password_user" class="form-control" required>
+                                <label for="">Descripción</label>
+                                <textarea type="text" name="descripcion" class="form-control" rows="3" placeholder="Ejemplo: Bebida sabor naranja" required></textarea>
                               </div>
                               <div class="form-group">
-                                <label for="">Repita la contraseña</label>
-                                <input type="text" name="password_repeat" class="form-control" required>
+                                <label for="">Precio</label>
+                                <input type="number" name="precio" class="form-control" placeholder="Ejemplo: 10000" required>
                               </div>
-
-                              <!-- Agregamos el input para elegir rol del usuario -->
-                              <label for="">Rol del usuario</label>
-                              <select class="custom-select" name="rol" id="inputGroupSelect01" required>
-                                <option value="2">Vendedor</option>
-                                <option value="1">Jefe de ventas</option>
-                              </select>
+                              <div class="form-group">
+                                <label for="">stock</label>
+                                <input type="number" name="stock" class="form-control" placeholder="Ejemplo: 100" required>
+                              </div>
 
                               <hr>
                               <!-- Agregamos los botones -->
                               <div class="form-group">
                                 <!-- Este boton nos envia a el listado de usuarios -->
-                                <a class="btn btn-secondary" href="index.php">Cancelar</a>
+                                <a class="btn btn-secondary" href="index.php">Volver</a>
                                 <!-- Este boton envia la informaciond del formulario -->
                                 <button class="btn btn-primary" type="submit">Guardar</button>
                               </div>
