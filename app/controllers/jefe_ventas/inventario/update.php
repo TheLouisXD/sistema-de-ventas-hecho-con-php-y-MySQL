@@ -3,53 +3,40 @@
 
      // obtenemos los datos del formulario
 
-    $id_usuario = $_POST['id_usuario_get'];
-    $nombres = $_POST['Nombres'];
-    $email = $_POST['email'];
-    $password_user = $_POST['password_user'];
-    $password_repeat = $_POST['password_repeat'];
-    $rol = $_POST['rol'];
+    $id_producto = $_POST['id_producto_get'];
+    $nombre = $_POST['nombre'];
+    $codigo = $_POST['codigo'];
+    $descripcion = $_POST['descripcion'];
+    $precio = $_POST['precio'];
+    $stock = $_POST['stock'];
 
-    // Recuperamos el id del usuario que se desea modificar
+    // Recuperamos el id del producto que se desea modificar
 
-    // verificamos que ambas contraseñas sean iguales
-    if ($password_user == $password_repeat) {
-
-        // Usamos password hash para encriptar la contraseña
-        $password_user = password_hash($password_user, PASSWORD_DEFAULT);
-
-        // Creamos la sentencia SQL
-        $sentencia = $pdo->prepare("UPDATE tb_usuarios 
-        SET nombres=:nombres, 
-            email=:email,
-            password_user=:password_user, 
-            FyH_actualizacion=:fyh_actualizacion,
-            id_rol=:id_rol 
-        WHERE id_usuario = :id_usuario");
+    // Creamos la sentencia SQL
+    $sentencia = $pdo->prepare("UPDATE tb_inventario 
+    SET codigo =:codigo,
+        nombre =:nombre,
+        descripcion =:descripcion,
+        stock =:stock, 
+        precio =:precio, 
+        fyh_actualizacion =:fyh_actualizacion
+    WHERE id_producto = :id_producto ");
+    
+    // Este codigo lo que hacer es reemplazar los VALUES por los datos obtenidos en el formulario
+    $sentencia->bindParam("id_producto", $id_producto);
+    $sentencia->bindParam("codigo", $codigo);
+    $sentencia->bindParam("nombre", $nombre);
+    $sentencia->bindParam("descripcion", $descripcion);
+    $sentencia->bindParam("stock", $stock);
+    $sentencia->bindParam("precio", $precio);
+    $sentencia->bindParam("fyh_actualizacion", $fechaHora);
         
-        // Este codigo lo que hacer es reemplazar los VALUES por los datos obtenidos en el formulario
-        $sentencia->bindParam("nombres", $nombres);
-        $sentencia->bindParam("email", $email);
-        $sentencia->bindParam("password_user", $password_user);
-        $sentencia->bindParam("fyh_actualizacion", $fechaHora);
-        $sentencia->bindParam("id_usuario", $id_usuario);
-        $sentencia->bindParam("id_rol", $rol);
+    // Ejecutamos la sentencia
+    $sentencia->execute();
 
-        // Ejecutamos la sentencia
-        $sentencia->execute();
-
-        // iniciamos sesion con un mensaje de exito
-        session_start();
-        $_SESSION["mensaje"] = "El usuario ".$nombres." fue actualizado con exito";
-        $_SESSION['icono'] = "success";
-        header("Location:".$URL."/vistas/Jefe_de_ventas/usuarios");
-
-    } else {
-        // Creamos una sesion con un mensaje de error.
-        session_start();
-        $_SESSION["mensaje"] = "Error, las contraseñas no son identicas";
-        $_SESSION['icono'] = 'error';
-        // nos aseguramos de pner el id del usuario en caso de que no se actualize o haya un error
-        header("Location:".$URL."/vistas/Jefe_de_ventas/usuarios/update.php?id=".$id_usuario);
-    }
+    // iniciamos una sesion con un mensaje de exito
+    session_start();
+    $_SESSION["mensaje"] = "El producto ".$nombre." fue actualizado con exito";
+    $_SESSION['icono'] = "success";
+    header("Location:".$URL."/vistas/Jefe_de_ventas/inventario");
 ?>

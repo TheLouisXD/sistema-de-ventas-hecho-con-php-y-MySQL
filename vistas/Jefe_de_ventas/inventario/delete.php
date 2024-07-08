@@ -1,4 +1,4 @@
-<!-- Este archivo mostrara la informacion del usuario del que se desea saber más informacion, esto dandole click al botn "ver" en la tabla de usuarios -->
+<!-- Este archivo mostrara la informacion del usuario del que se desea eliminar -->
 
 <?php
 
@@ -21,7 +21,7 @@
         <div class="row mb-2">
           <!-- Borramos el contenido de ejemplo y aumentamos a 12 columnas -->
           <div class="col-sm-12">
-            <h1 class="m-0">Más informacion</h1>
+            <h1 class="m-0">Eliminar un producto</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -37,15 +37,22 @@
         
         <div class="row">
           <div class="col-md-5">
-          <div class="card card-primary">
+          <div class="card card-danger">
                     <div class="card-header">
-                        <h3 class="card-title"><?php echo $nombre?></h3>
+                        <h3 class="card-title">Estas seguro que deseas eliminar: <?php echo $nombre?></h3>
+                        <!-- <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                        </div> -->
                     </div>
 
                     <div class="card-body">
                         <div class="row">
                           <div class="col-md-12">
-                              <div class="form-group">
+                              <form action="../../../app/controllers/jefe_ventas/inventario/delete_producto.php" method="post">
+                                <div class="form-group">
+                                    <!-- Mostramos la informacion recuperada en el archivo /controllers/usuarios/show.php -->
+                                    <input type="text" name="id_producto" value="<?php echo $id_producto_get?>" hidden>
+                                    <div class="form-group">
                                 <center><label for="">Nombre</label></center>
                                 <input type="text" name="nombre" readonly class="form-control-plaintext text-center" value="<?php echo $nombre?>">
                                 </div>
@@ -74,12 +81,13 @@
                                 <input type="text" name="FyHactualizacion" readonly class="form-control-plaintext text-center" value="<?php echo $Fecha_modificacion?>">
                               </div>
 
-
-                              <hr>
-                              <!-- Agregamos un boton para volver a la pagina anterior -->
-                              <div class="form-group">
-                                <button class="btn btn-primary" onclick="history.back()"><i class="fas fa-angle-left"></i> Volver</button>
-                              </div>
+                                <hr>
+                                <!-- Agregamos un boton para volver a la pagina anterior -->
+                                <div class="form-group">
+                                    <button class="btn btn-primary" onclick="history.back()"><i class="fas fa-angle-left"></i> Volver</button>
+                                    <button class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</button>
+                                </div>
+                              </form>
                           </div>
                         </div>
                     </div>

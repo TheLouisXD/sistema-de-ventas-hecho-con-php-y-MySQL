@@ -53,6 +53,7 @@
                         <table id="tabla_inventario" class="table table-bordered table-hover">
                           <!-- Cambiamos el color de la cabecera de la tabla -->
                             <thead class="thead-dark">
+                                <th>Nro</th>
                                 <th>Codigo (SKU)</th>
                                 <th>Nombre</th>
                                 <th>Precio</th>
@@ -62,10 +63,17 @@
                             <!-- Agregamos el codigo correspondiente para mostrar la informacion obtenida en el controlador de listado de inventario -->
                             <tbody>
                                     <?php
+                                    
+                                    $contador = 0;
+
                                     foreach($datos_inventario as $producto_dato){ 
+
+                                      $contador = $contador + 1;
+
                                         $id_producto = $producto_dato['id_producto']?>
                                     <!-- concatenamos html para llenar la tabla con la informacion de la base de datos que necesitamos -->
                                     <tr>
+                                        <td><?php echo $contador?></td>
                                         <td><?php echo $producto_dato['codigo'];?></td>
                                         <td><?php echo $producto_dato['nombre'];?></td>
                                         <td><?php echo $producto_dato['precio'];?></td>
