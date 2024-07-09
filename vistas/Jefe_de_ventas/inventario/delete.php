@@ -84,8 +84,8 @@
                                 <hr>
                                 <!-- Agregamos un boton para volver a la pagina anterior -->
                                 <div class="form-group">
-                                    <button class="btn btn-primary" onclick="history.back()"><i class="fas fa-angle-left"></i> Volver</button>
-                                    <button class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</button>
+                                    <button type="button" class="btn btn-primary" onclick="history.back()"><i class="fas fa-angle-left"></i> Volver</button>
+                                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</button>
                                 </div>
                               </form>
                           </div>

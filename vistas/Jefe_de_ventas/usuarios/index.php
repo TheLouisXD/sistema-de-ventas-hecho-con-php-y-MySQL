@@ -9,7 +9,7 @@
   include("../../../app/controllers/jefe_ventas/usuarios/listado_de_usuarios.php");
 
   // Asignamos el texto "active" para que en el layout, el boton se resalte cuando se acceda a esta vista
-  $btn_usuarios = "active";
+  $btn_lateral = 1;
 
   include("../../../layout/jefe_venta/parte1.php");
 

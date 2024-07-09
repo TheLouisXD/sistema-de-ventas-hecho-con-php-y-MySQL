@@ -93,26 +93,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
                <li class="nav-item ">
                 <!-- Creamos una variable btn_usuarios vacia para que el boton no resalte -->
-                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/usuarios" class="nav-link <?php echo $btn_usuarios?>">
-                  <i class="far fa-user-circle nav-icon"></i>
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/usuarios" class="nav-link <?php if($btn_lateral == 1) echo "active"?>">
+                  <i class="fa fa-user-circle nav-icon"></i>
                   <p>Usuarios</p>
                 </a>
               </li>
               <!-- Creamos un nav-item por cada boton para que se vea bien y bonito :3 -->
               <li class="nav-item">
-                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php echo $btn_inventario?>">
-                  <i class="far fa-user-circle nav-icon"></i>
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php if($btn_lateral == 2) echo "active"?>">
+                  <i class="fa fa-box nav-icon"></i>
                   <p>inventario</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php echo $btn_admin?>">
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/administracion" class="nav-link <?php if($btn_lateral == 3) echo "active"?>">
                   <i class="far fa-user-circle nav-icon"></i>
                   <p>Administrar sistema</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php echo $btn_informes?>">
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php if($btn_lateral == 4) echo "active"?>">
                   <i class="far fa-user-circle nav-icon"></i>
                   <p>Informe de ventas</p>
                 </a>

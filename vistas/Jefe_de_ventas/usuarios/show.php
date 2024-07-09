@@ -6,9 +6,12 @@
   // Reducimos codigo e importamos la verificacion
   include("../../../layout/sesion_jefe_venta.php");
 
+  // Asignamos el texto "active" para que en el layout, el boton se resalte cuando se acceda a esta vista
+  $btn_lateral = 1;
+
   include("../../../layout/jefe_venta/parte1.php");
 
-    include("../../../app/controllers/jefe_ventas/usuarios/show_usuario.php");
+  include("../../../app/controllers/jefe_ventas/usuarios/show_usuario.php");
 
   // Añadimos un mensaje en caso de que las contraseñas no sean identicas
   include("../../../layout/mensajes.php");

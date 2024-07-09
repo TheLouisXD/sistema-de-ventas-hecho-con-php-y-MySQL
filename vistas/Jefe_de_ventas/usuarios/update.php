@@ -6,6 +6,9 @@
   // Reducimos codigo e importamos la verificacion
   include("../../../layout/sesion_jefe_venta.php");
 
+  // Asignamos el texto "active" para que en el layout, el boton se resalte cuando se acceda a esta vista
+  $btn_lateral = 1;
+
   include("../../../layout/jefe_venta/parte1.php");
 
   include("../../../app/controllers/jefe_ventas/usuarios/update_usuario.php");

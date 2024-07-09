@@ -9,7 +9,7 @@
   include("../../../app/controllers/jefe_ventas/inventario/listado_de_inventario.php");
 
   // Asignamos el texto "active" para que en el layout, el boton se resalte cuando se acceda a esta vista
-  $btn_inventario = "active";
+  $btn_lateral = 2;
 
   include("../../../layout/jefe_venta/parte1.php");
 
@@ -54,8 +54,8 @@
                           <!-- Cambiamos el color de la cabecera de la tabla -->
                             <thead class="thead-dark">
                                 <th>Nro</th>
-                                <th>Codigo (SKU)</th>
                                 <th>Nombre</th>
+                                <th>Codigo (SKU)</th>
                                 <th>Precio</th>
                                 <th>Stock</th>
                                 <th>Acciones</th>
@@ -74,8 +74,8 @@
                                     <!-- concatenamos html para llenar la tabla con la informacion de la base de datos que necesitamos -->
                                     <tr>
                                         <td><?php echo $contador?></td>
-                                        <td><?php echo $producto_dato['codigo'];?></td>
                                         <td><?php echo $producto_dato['nombre'];?></td>
+                                        <td><?php echo $producto_dato['codigo'];?></td>
                                         <td><?php echo $producto_dato['precio'];?></td>
                                         <!-- Agregamos una logica para imprimir el rol del usuario en la tabla de inventario basandonos en el id_rol del usuario -->
                                         <td><?php echo $producto_dato['stock'];?></td>

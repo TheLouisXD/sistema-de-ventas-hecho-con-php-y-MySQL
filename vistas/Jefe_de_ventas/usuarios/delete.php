@@ -6,6 +6,9 @@
   // Reducimos codigo e importamos la verificacion
   include("../../../layout/sesion_jefe_venta.php");
 
+  // Asignamos el texto "active" para que en el layout, el boton se resalte cuando se acceda a esta vista
+  $btn_lateral = 1;
+
   include("../../../layout/jefe_venta/parte1.php");
 
     include("../../../app/controllers/jefe_ventas/usuarios/show_usuario.php");
@@ -75,8 +78,8 @@
                                 <hr>
                                 <!-- Agregamos un boton para volver a la pagina anterior -->
                                 <div class="form-group">
-                                    <button class="btn btn-primary" onclick="history.back()"><i class="fas fa-angle-left"></i> Volver</button>
-                                    <button class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</button>
+                                    <button type="button" class="btn btn-primary" onclick="history.back()"><i class="fas fa-angle-left"></i> Volver</button>
+                                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</button>
                                 </div>
                               </form>
                           </div>
