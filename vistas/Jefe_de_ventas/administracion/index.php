@@ -113,3 +113,52 @@
 
 
 <?php include("../../../layout/jefe_venta/parte2.php"); ?>
+
+    <!-- Script para ejecutar DataTable, lo colocamos aqui por que este script requiere de unos plugisn que son importados en parte2.php -->
+    <script>
+    $(function () {
+      $("#tabla_usuarios").DataTable({
+          // Aqui elegimos cuantos elementos se muestran por pagina
+          "pageLength": 5,
+          // Cambiamos el idioma de dataTables
+          language: {
+              "emptyTable": "No hay información",
+              "decimal": "",
+              "info": "Mostrando _START_ a _END_ de _TOTAL_ Usuarios",
+              "infoEmpty": "Mostrando 0 to 0 of 0 Usuarios",
+              "infoFiltered": "(Filtrado de _MAX_ total Usuarios)",
+              "infoPostFix": "",
+              "thousands": ",",
+              "lengthMenu": "Mostrar _MENU_ Usuarios",
+              "loadingRecords": "Cargando...",
+              "processing": "Procesando...",
+              "search": "Buscador:",
+              "zeroRecords": "Sin resultados encontrados",
+              "paginate": {
+                  "first": "Primero",
+                  "last": "Ultimo",
+                  "next": "Siguiente",
+                  "previous": "Anterior"
+              }
+            },
+          /* fin de idiomas */
+
+        "responsive": true, "lengthChange": true, "autoWidth": true,
+        // Cambiamos lo botones para que se vea más limpia la interfaz, haciendo que las funciones de exportar y la visibilidad de las columnas sean botones separados
+        "buttons": [{
+          extend: 'collection',
+          text: 'Exportar',
+          orientation: 'landscape',
+          buttons:[{text: 'copiar', extend: 'copy'},
+                    "csv", 
+                    "excel",
+                    "pdf",
+                    {text: 'Imprimir' , extend:"print"}] 
+        },
+        { text: 'ver columnas',
+          extend:"colvis"}
+        ]
+        // para que funcionen los botones, debemos poner el nombre de la tabla seguido de _wrapper
+      }).buttons().container().appendTo('#tabla_usuarios_wrapper .col-md-6:eq(0)');
+    });
+  </script>
