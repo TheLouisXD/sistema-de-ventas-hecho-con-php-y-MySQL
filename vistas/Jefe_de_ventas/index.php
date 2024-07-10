@@ -41,7 +41,7 @@
         <br>
         <hr>
         <img src="https://c.tenor.com/weB7SDBJ1lgAAAAC/tenor.gif" alt="">
-        <h1 style="font-family: Impact;">Espejo hecho en html :0 </h1>
+        <h1 style="font-family: Impact;">Espejo culiao hecho en html :0 </h1>
 
       </div><!-- /.container-fluid -->
     </div>

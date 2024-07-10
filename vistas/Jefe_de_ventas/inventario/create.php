@@ -79,7 +79,7 @@
                                 <!-- Este boton nos envia a el listado de usuarios -->
                                 <a class="btn btn-secondary" href="index.php">Volver</a>
                                 <!-- Este boton envia la informaciond del formulario -->
-                                <button class="btn btn-primary" type="submit">Guardar</button>
+                                <button type="submit" class="btn btn-primary" type="submit">Guardar</button>
                               </div>
 
                             </form>

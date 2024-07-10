@@ -10,6 +10,7 @@
     $usuarios = $query->fetchAll(PDO::FETCH_ASSOC);
     foreach( $usuarios as $usuario ){
         $id_usuario = $usuario['id_usuario'];
+        $nombres_usuario = $usuario['nombres'];
         $email_tabla = $usuario['email'];
         $Fecha_creacion = $usuario['FyH_creacion'];
         $Fecha_modificacion = $usuario['FyH_actualizacion'];

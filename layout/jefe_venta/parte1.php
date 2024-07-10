@@ -107,7 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
               <li class="nav-item">
                 <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/administracion" class="nav-link <?php if($btn_lateral == 3) echo "active"?>">
-                  <i class="far fa-user-circle nav-icon"></i>
+                  <i class="fa fa-key"></i>
                   <p>Administrar sistema</p>
                 </a>
               </li>
