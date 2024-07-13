@@ -41,6 +41,8 @@
         }elseif( $rol_usuario == 2){
             session_start();
             $_SESSION['vendedor'] = $nombre;
+            $_SESSION["mensaje"] = "Bienvenido al sistema ".$nombre;
+            $_SESSION["icono"] = "success";
             header('Location: '.$URL.'/vistas/Vendedor');
         }
 

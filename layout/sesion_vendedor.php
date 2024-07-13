@@ -1,7 +1,7 @@
 <!-- Este archivo hace la verificacion de sesion -->
 <?php
 
-  include("../../app/controllers/jefe_ventas/administracion/get_estado.php");
+  // Usamos
 
   session_start();
   if (isset($_SESSION["vendedor"])){

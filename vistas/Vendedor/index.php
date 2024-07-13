@@ -7,10 +7,18 @@
 <?php
 
   include("../../app/config.php");
+
+  // Importamos el estado del sistema
+  include("../../app/controllers/jefe_ventas/administracion/get_estado.php");
+
   // Reducimos codigo e importamos la verificacion
   include("../../layout/sesion_vendedor.php");
 
-  include("../../layout/vendedor/parte1.php");?>
+  $btn_lateral = 1;
+
+  include("../../layout/vendedor/parte1.php");
+  
+  include("../../layout/mensajes.php");?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
