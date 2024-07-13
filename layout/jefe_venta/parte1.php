@@ -93,6 +93,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
                <li class="nav-item ">
                 <!-- Creamos una variable btn_usuarios vacia para que el boton no resalte -->
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/" class="nav-link <?php if($btn_lateral == 5) echo "active"?>">
+                  <i class="fa fa-home nav-icon"></i>
+                  <p>Inicio</p>
+                </a>
+              </li>
+               <li class="nav-item ">
+                <!-- Creamos una variable btn_usuarios vacia para que el boton no resalte -->
                 <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/usuarios" class="nav-link <?php if($btn_lateral == 1) echo "active"?>">
                   <i class="fa fa-user-circle nav-icon"></i>
                   <p>Usuarios</p>
@@ -113,7 +120,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
               <li class="nav-item">
                 <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php if($btn_lateral == 4) echo "active"?>">
-                  <i class="far fa-user-circle nav-icon"></i>
+                  <i class="far fa-file nav-icon"></i>
                   <p>Informe de ventas</p>
                 </a>
               </li>

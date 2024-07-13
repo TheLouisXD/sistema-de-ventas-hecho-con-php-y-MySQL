@@ -10,6 +10,8 @@
   // Reducimos codigo e importamos la verificacion
   include("../../layout/sesion_jefe_venta.php");
 
+  $btn_lateral = 5;
+  
   include("../../layout/jefe_venta/parte1.php");
   
   include("../../layout/mensajes.php");
