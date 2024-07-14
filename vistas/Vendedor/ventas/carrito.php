@@ -29,7 +29,7 @@
       <div class="row mb-2">
         <!-- Borramos el contenido de ejemplo y aumentamos a 12 columnas -->
         <div class="col-sm-12">
-          <h1 class="m-0">Crear Ventas</h1>
+          <h1 class="m-0">Agregar productos</h1>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -45,13 +45,13 @@
           <div class="col-md-12">
               <div class="card card-outline card-primary">
                   <div class="card-header">
-                      <h3 class="card-title"> Iniciar una venta </h3>
+                      <h3 class="card-title"> Elegir los productos </h3>
                   </div>
                   <div class="card-body">
                     <!-- Mostramos intrucciones para el usuario -->
                       <center><h2 class="admin-card-title">Para iniciar una venta <br> haz click en el boton "iniciar venta"</h2></center>
                         <!-- Boton para iniciar una venta -->
-                        <center><a href="carrito.php" class="btn btn-success btn-lg btn_sistema" >Iniciar Venta</a></center>
+                        <center><a href="" class="btn btn-success btn-lg btn_sistema" name="btn_sistema" value=1 >Iniciar Venta</a></center>
                   </div>
 
               </div>
