@@ -4,6 +4,9 @@
 
   include("../../../app/config.php");
 
+  // Importamos la busqueda de ventas
+  include("../../../app/controllers/vendedor/ventas/listado_de_ventas.php");
+
   // Importamos el estado del sistema
   include("../../../app/controllers/jefe_ventas/administracion/get_estado.php");
   
@@ -16,8 +19,7 @@
   
   include("../../../layout/mensajes.php");?>
 
-<!-- Incluimos el css -->
-<link rel="stylesheet" href="../../../styles/administracion.css">
+
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -49,7 +51,7 @@
                     <!-- Mostramos intrucciones para el usuario -->
                       <center><h2 class="admin-card-title">Para iniciar una venta <br> haz click en el boton "iniciar venta"</h2></center>
                         <!-- Boton para iniciar una venta -->
-                        <center><button type="submit" class="btn btn-success btn-lg btn_sistema" name="btn_sistema" value=1 >Iniciar Venta</button></center>
+                        <center><a href="" class="btn btn-success btn-lg btn_sistema" name="btn_sistema" value=1 >Iniciar Venta</a></center>
                   </div>
 
               </div>
@@ -74,32 +76,30 @@
                               <th>Id</th>
                               <th>Nombre del vendedor</th>
                               <th>Fecha y hora de la venta</th>
-                              <th>hola :3</th>
+                              <th>Tipo de documento</th>
                           </thead>
-                          <!-- Agregamos el codigo correspondiente para mostrar la informacion obtenida en el controlador de listado de usuarios -->
+                          <!-- Agregamos el codigo correspondiente para mostrar la informacion obtenida en el controlador de listado de ventas -->
                           <tbody>
                               <?php 
-                                  //incluimos el controlador pero en la parte de arriba para evitar errores
-                                  // include("../app/controllers/usuarios/listado_de_usuarios.php");
-                                  // Creamos un contador para contar los usuarios
+                                  // Creamos un contador para contar las ventas
                                   $contador = 0;
-                                  // por cada usuario se imprimira informacion
-                                  foreach($datos_admin as $admin_dato){
+                                  // por cada venta se imprimira informacion
+                                  foreach($datos_ventas as $venta_dato){
                                     $contador = $contador + 1;
-                                    $id_log = $admin_dato['id_log'];
-                                    $nombre_usuario = $admin_dato['nombre_usuario'];
-                                    $fyh_accion = $admin_dato['FyH_accion'];
-                                    $id_estado_log = $admin_dato['id_estado'];?>
+                                    $id_venta = $venta_dato['id_venta'];
+                                    $nombre_vendedor = $venta_dato['nombre_vendedor'];
+                                    $documento = $venta_dato['tipo_documento'];
+                                    $fyh_venta = $venta_dato['fyh_venta']?>
                                   <!-- concatenamos html para llenar la tabla con la informacion de la base de datos que necesitamos -->
                                   <tr>
-                                      <td><?php echo $contador;?></td>
-                                      <td><?php echo $nombre_usuario;?></td>
-                                      <td><?php echo $fyh_accion;?></td>
+                                      <td><?php echo $id_venta;?></td>
+                                      <td><?php echo $nombre_vendedor;?></td>
+                                      <td><?php echo $fyh_venta;?></td>
                                       <!-- Agregamos una logica para imprimir el rol del usuario en la tabla de usuarios basandonos en el id_rol del usuario -->
-                                      <td><?php if ($id_estado_log == 1){
-                                                  echo "Abierto";
-                                                }elseif ($id_estado_log == 2){
-                                                  echo "Cerrado";
+                                      <td><?php if ($documento == 1){
+                                                  echo "Boleta";
+                                                }elseif ($documento == 2){
+                                                  echo "Factura";
                                                 }?></td>
                                   </tr>
                                   <!-- Cuando ya terminamos de insertar la informacion, volvemos a abrir el codigo php para asi poder hacer que el codigo funcione :D -->
