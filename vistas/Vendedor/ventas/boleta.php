@@ -55,16 +55,15 @@
             </div>
             <div class="card-body">
             <form method="POST" action="../../../app/controllers/vendedor/ventas/generar_boleta.php">
-                <table id="tabla_carrito" class="table table-bordered table-hover">
+                <table id="tabla_carrito" class="table table-bordered table-hover" >
                 <thead class="thead-dark">
-                  <th>Nombre</th>
+                  <th>Producto</th>
                   <th>Codigo</th>
                   <th>Cantidad</th>
                   <th>Precio unitario</th>
                   <th>Neto</th>
                   <th>IVA</th>
                   <th>Total + IVA</th>
-                  <th>Accion</th>
                 </thead>
                 <tbody>
                     <?php
@@ -84,11 +83,6 @@
                           <td>$<?php echo number_format($dato_carrito['precio'] * $dato_carrito['cantidad'])?></td>
                           <td>$<?php echo number_format( 0.19 * ($dato_carrito['precio'] * $dato_carrito['cantidad']))?></td>
                           <td>$<?php echo number_format( 1.19 * ($dato_carrito['precio'] * $dato_carrito['cantidad']))?></td>
-                          <td>
-                            <a href="carrito.php?action=remove&id=<?php echo $dato_carrito['id_producto']?>">
-                              <button class="btn btn-danger btn-block"> Remover </button>
-                            </a>
-                          </td>
                         </tr>
 
                         <?php
@@ -107,12 +101,6 @@
                           <td>$<?php echo number_format($neto); ?></td>
                           <td>$ <?php echo number_format($IVA)?></td>
                           <td>$ <?php echo number_format($total)?></td>
-                          <td>
-                          
-                            <a href="carrito.php?action=clearall">
-                              <button class="btn btn-warning btn-block" value="Borrar todo">Borrar todo</button>
-                            </a>
-                          </td>
                         </tr>
                       
                     <?php

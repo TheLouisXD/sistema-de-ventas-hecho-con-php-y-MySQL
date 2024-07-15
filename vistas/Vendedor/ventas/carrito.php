@@ -23,6 +23,11 @@
   
   include("../../../app/controllers/vendedor/ventas/iniciar_venta.php");
 
+  $btn_documento = "hidden";
+
+  if (!empty($_SESSION['carrito'])) {
+    $btn_documento = null;
+  }
 
     if(isset($_GET['action'])) {
 
@@ -138,9 +143,9 @@
               <h3 class="card-title">Carrito de Compras</h3>
             </div>
             <div class="card-body">
-              <table id="tabla_carrito" class="table table-bordered table-hover">
+              <table id="tabla_carrito" class="table table-bordered table-hover" <?php echo $btn_documento?>>
                 <thead class="thead-dark">
-                  <th>Nombre</th>
+                  <th>Producto</th>
                   <th>Codigo</th>
                   <th>Cantidad</th>
                   <th>Precio unitario</th>
@@ -202,8 +207,8 @@
                 </tbody>
               </table>
               <center>
-                <a href="boleta.php" class="btn btn-success">Generar Boleta</a>
-                <a href="Factura.php" class="btn btn-success">Generar Factura</a>
+                <a href="boleta.php" class="btn btn-success" <?php echo $btn_documento?> >Generar Boleta</a>
+                <a href="Factura.php" class="btn btn-success" <?php echo $btn_documento?> >Generar Factura</a>
               </center>
             </div>
           </div>
