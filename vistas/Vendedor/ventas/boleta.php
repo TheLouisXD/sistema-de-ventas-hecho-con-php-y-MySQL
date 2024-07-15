@@ -17,33 +17,11 @@
 
   $btn_lateral = 2;
 
+  include("../../../app/controllers/vendedor/ventas/listado_boleta.php");
+
   include("../../../layout/vendedor/parte1.php");
   
   include("../../../layout/mensajes.php");
-  
-  include("../../../app/controllers/vendedor/ventas/iniciar_venta.php");
-
-
-    if(isset($_GET['action'])) {
-
-      if ($_GET['action'] == "clearall"){
-
-        unset($_SESSION['carrito']);
-      }
-    }
-
-    if(isset($_GET['action'])) {
-
-      if ($_GET['action'] == "remove"){
-
-        foreach ($_SESSION['carrito'] as $key => $dato_carrito){
-
-          if ($dato_carrito['id_producto'] == $_GET['id']){
-              unset($_SESSION['carrito'][$key])  ;
-          }
-        }
-      }
-    }
 
   ?>
 
@@ -57,7 +35,7 @@
       <div class="row mb-2">
         <!-- Borramos el contenido de ejemplo y aumentamos a 12 columnas -->
         <div class="col-sm-12">
-          <h1 class="m-0">Agregar productos</h1>
+          <h1 class="m-0">Generar boleta</h1>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -70,75 +48,14 @@
     <div class="container-fluid">
       <!-- Aqui creamos una tarjeta para mostrar el boton de inicio de venta -->
       <div class="row">
-      <div class="col-md-12">
-                <div class="card card-outline card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">Elegir productos</h3>
-                        <!-- Agregamos un boton para minimizar la tabla -->
-                    </div>
-                    <!-- Insertamos una tabla en la tarjeta -->
-                    <div class="card-body">
-                        <table id="tabla_inventario" class="table table-bordered table-hover">
-                          <!-- Cambiamos el color de la cabecera de la tabla -->
-                            <thead class="thead-dark">
-                                <th>Nro</th>
-                                <th>Nombre</th>
-                                <th>Codigo (SKU)</th>
-                                <th>Precio</th>
-                                <th>Stock</th>
-                                <th>Acciones</th>
-                            </thead>
-                            <!-- Agregamos el codigo correspondiente para mostrar la informacion obtenida en el controlador de listado de inventario -->
-                            <tbody>
-                                    <?php
-                                    
-                                    $contador = 0;
-
-                                    foreach($datos_inventario as $producto_dato){ 
-
-                                      $contador = $contador + 1;
-
-                                        $id_producto = $producto_dato['id_producto']?>
-                                    <!-- concatenamos html para llenar la tabla con la informacion de la base de datos que necesitamos -->
-                                    <tr>
-                                        <td><?php echo $contador?></td>
-                                        <td><?php echo $producto_dato['nombre'];?></td>
-                                        <td><?php echo $producto_dato['codigo'];?></td>
-                                        <td><?php echo $producto_dato['precio'];?></td>
-                                        <td><?php echo $producto_dato['stock'];?></td>
-                                        <td>
-                                          <form method="post" action="carrito.php?id=<?= $producto_dato['id_producto'] ?>">
-                                          <!-- boton para ver la informacion del producto -->
-                                            <label for="">cantidad:</label>  
-                                            <input type="number" class="col-md-3" name="cantidad" min="1" max="<?php echo $producto_dato['stock'];?>" value="1" >
-                                            <input type="hidden" name="id_producto" value="<?= $producto_dato['id_producto']?>">
-                                            <input type="hidden" name="nombre" value="<?= $producto_dato['nombre']?>">
-                                            <input type="hidden" name="codigo" value="<?= $producto_dato['codigo']?>">
-                                            <input type="hidden" name="precio" value="<?= $producto_dato['precio']?>">
-                                            <input type="hidden" name="stock" value="<?= $producto_dato['stock']?>">
-                                            <input type="submit" name="agregar_carrito" class="btn btn-success" value="agregar">     
-                                          </form>
-                                        </td>
-                                          
-                                    </tr>
-                                    <!-- Cuando ya terminamos de insertar la informacion, volvemos a abrir el codigo php para asi poder hacer que el codigo funcione :D -->
-                                <?php
-                                    }
-                                ?>
-                            </tbody>
-                            
-                        </table>
-                    </div>
-
-                </div>
-            </div>
             <div class="col-md-12">
           <div class="card card-outline card-primary">
             <div class="card-header">
-              <h3 class="card-title">Carrito de Compras</h3>
+              <h3 class="card-title">Vista previa de la boleta</h3>
             </div>
             <div class="card-body">
-              <table id="tabla_carrito" class="table table-bordered table-hover">
+            <form method="POST" action="../../../app/controllers/vendedor/ventas/generar_boleta.php">
+                <table id="tabla_carrito" class="table table-bordered table-hover">
                 <thead class="thead-dark">
                   <th>Nombre</th>
                   <th>Codigo</th>
@@ -183,7 +100,9 @@
                         ?>
 
                         <tr>
-                          <td colspan="3"></td>
+                            <td><b>Fecha y hora:</b></td>
+                            <td><?php echo $fechaHora?></td>
+                          <td colspan="1"></td>
                           <td><b>Precio total</b></td>
                           <td>$<?php echo number_format($neto); ?></td>
                           <td>$ <?php echo number_format($IVA)?></td>
@@ -201,10 +120,17 @@
                     ?>
                 </tbody>
               </table>
-              <center>
-                <a href="boleta.php" class="btn btn-success">Generar Boleta</a>
-                <a href="Factura.php" class="btn btn-success">Generar Factura</a>
-              </center>
+              <div class="m-3">
+              <center><label for="metodo_pago"> Metodo de pago: </label>
+              <select  name="metodo_pago" id="metodo_pago" class="form-control w-50" required>
+                <option value="debito" selected>Debito</option>
+                <option value="efectivo">Efectivo</option>
+                <option value="credito">Credito</option>
+              </select>
+              <br>
+              <input type="submit" value="Confimar venta" class="btn btn-success w-50"></center>
+              </div>
+            </form>
             </div>
           </div>
         </div>

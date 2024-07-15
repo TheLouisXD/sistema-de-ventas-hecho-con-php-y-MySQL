@@ -17,7 +17,15 @@
 
   include("../../../layout/vendedor/parte1.php");
   
-  include("../../../layout/mensajes.php");?>
+  include("../../../layout/mensajes.php");
+  
+  // cerrammos la sesion del carrito si volvemos a esta vista
+  if(isset($_SESSION['carrito'])) {
+
+    unset($_SESSION['carrito']);
+
+  }
+?>
 
 
 
