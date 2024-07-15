@@ -115,7 +115,7 @@
                                           <form method="post" action="carrito.php?id=<?= $producto_dato['id_producto'] ?>">
                                           <!-- boton para ver la informacion del producto -->
                                             <label for="">cantidad:</label>  
-                                            <input type="number" class="col-md-3" name="cantidad" min="1" max="<?php echo $producto_dato['stock'];?>" value="1" >
+                                            <input type="number" class="col-md-3" name="cantidad" max="<?php echo $producto_dato['stock'];?>" value="1" >
                                             <input type="hidden" name="id_producto" value="<?= $producto_dato['id_producto']?>">
                                             <input type="hidden" name="nombre" value="<?= $producto_dato['nombre']?>">
                                             <input type="hidden" name="codigo" value="<?= $producto_dato['codigo']?>">
