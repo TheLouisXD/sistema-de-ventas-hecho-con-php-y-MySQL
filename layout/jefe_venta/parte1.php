@@ -119,7 +119,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/inventario" class="nav-link <?php if($btn_lateral == 4) echo "active"?>">
+                <a href="<?php echo $URL;?>/vistas/Jefe_de_ventas/informes" class="nav-link <?php if($btn_lateral == 4) echo "active"?>">
                   <i class="far fa-file nav-icon"></i>
                   <p>Informe de ventas</p>
                 </a>

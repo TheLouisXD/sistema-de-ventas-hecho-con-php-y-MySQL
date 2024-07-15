@@ -45,7 +45,7 @@
             $_SESSION["mensaje"] = "El sistema se ha cerrado con exito";
             $_SESSION['icono'] = "success";
 
-            header("Location:".$URL."/vistas/Jefe_de_ventas/administracion");
+            header("Location:".$URL."/app/controllers/jefe_ventas/administracion/generar_informe.php");
         }else{
             session_start();
 

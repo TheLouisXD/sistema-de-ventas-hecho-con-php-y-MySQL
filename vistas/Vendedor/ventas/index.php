@@ -158,22 +158,8 @@
             },
           /* fin de idiomas */
 
-        "responsive": true, "lengthChange": true, "autoWidth": true, "order": [[0, "desc"]],
-        // Cambiamos lo botones para que se vea más limpia la interfaz, haciendo que las funciones de exportar y la visibilidad de las columnas sean botones separados
-        "buttons": [{
-          extend: 'collection',
-          text: 'Exportar',
-          orientation: 'landscape',
-          buttons:[{text: 'copiar', extend: 'copy'},
-                    "csv", 
-                    "excel",
-                    "pdf",
-                    {text: 'Imprimir' , extend:"print"}] 
-        },
-        { text: 'ver columnas',
-          extend:"colvis"}
-        ]
+        "responsive": true, "lengthChange": true, "autoWidth": true, "order": [[0, "desc"]]
         // para que funcionen los botones, debemos poner el nombre de la tabla seguido de _wrapper
-      }).buttons().container().appendTo('#tabla_ventas_wrapper .col-md-6:eq(0)');
+      })
     });
   </script>
