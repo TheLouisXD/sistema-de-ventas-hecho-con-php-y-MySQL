@@ -1,4 +1,8 @@
 <?php 
+
+    ob_start(); 
+
+    session_start();
     require_once('../../../tcpdf/tcpdf.php');
 
     require_once('../../../config.php');
@@ -6,33 +10,55 @@
     $dateTime = new DateTime($fechaHora);
     $fecha = $dateTime->format('Y-m-d');
 
-    function generar_informe($fecha){
+    $ruta_informes = __DIR__ . "/../../../../Documentos/Informes/";
+
+    // en caso de que no exista la carpeta, la creamos
+    if(!file_exists($ruta_informes)){
+        mkdir($ruta_informes, 0777, true);
+    }
+
+    function generar_informe($fecha, $tipo_documento = null, $nombre_archivo){
         // Le decimos a la funcion que use la variable pdo que obtenemos del config :P
         global $pdo;
+        global $ruta_informes;
+
         // Inicializamos el modulo
         $pdf = new TCPDF();
         $pdf->AddPage();
-        $pdf->SetFont('Helvetica', '', 12);
+        $pdf->SetFont('Helvetica', '', 5);
 
-        $html = '<h1> Informe de ventas - '.$fecha.'</h1>';
+        $titulo = '<h1> Informe de ventas - ' . ($tipo_documento == 1 ? "Boletas" : ($tipo_documento == 2 ? "Facturas" : "completo")) . " - " . $fecha;
+
+        $html = '<h1>'.$titulo.'</h1>';
 
         // Recuperamos las ventas del dia
-        $sentencia = $pdo -> prepare("SELECT * FROM tb_venta WHERE DATE(fyh_venta) = :fecha");
+        $consulta = "SELECT * FROM tb_venta WHERE DATE(fyh_venta) = :fecha";
 
-        $sentencia->bindParam(":fecha", $fecha);
+        if ($tipo_documento !== null){
+            $consulta .= " AND tipo_documento = :tipo_documento";
+        }
+
+        $sentencia = $pdo->prepare($consulta);
+
+        $sentencia->bindParam("fecha", $fecha);
+
+        if($tipo_documento !== null){
+            $sentencia->bindParam("tipo_documento", $tipo_documento);
+        }
 
         $sentencia->execute();
 
         $ventas = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         if($ventas){
-            $html .= "<table border = '1' cellpadding = '5'>";
+            $html .= "<table border = '1'>";
 
             $html .= '<thead>
                         <tr>
                             <th>ID venta</th>
                             <th>Nombre vendedor</th>
                             <th>Metodo de pago</th>
+                            <th>Tipo de documento</th>
                             <th>Valor neto</th>
                             <th>IVA</th>
                             <th>Total venta</th>
@@ -47,6 +73,13 @@
                             <td>".$venta['id_venta']."</td>
                             <td>".$venta['nombre_vendedor']."</td>
                             <td>".$venta['metodo_pago']."</td>
+                            <td>";
+                            if($venta['tipo_documento'] == 1){
+                                $html .= "Boleta";
+                            }elseif($venta['tipo_documento'] == 2){
+                                $html .= "Factura";
+                            }
+                            $html .= "</td>
                             <td>".$venta['valor_neto']."</td>
                             <td>".$venta['iva']."</td>
                             <td>".$venta['total_venta']."</td>
@@ -60,12 +93,33 @@
         }
 
         $pdf -> writeHTML($html, true, false, true, false, '');
-        return $pdf;
+        $pdf->Output($ruta_informes . $nombre_archivo, 'F');
+        return $nombre_archivo;
     }
 
-    // Recuperamos la informacion
-    $pdf = generar_informe($fecha);
+    // Generamos el PDF
+    $informe_general = generar_informe($fecha,null,'informe_general - '.$fecha.'.pdf');
 
-    $pdf->Output('informe.pdf','I');
+    $informe_boletas = generar_informe($fecha, 1, 'informe_boleta - '.$fecha.'.pdf');
+
+    $informe_facturas = generar_informe($fecha, 2, 'informe_facturas - '.$fecha.'.pdf');
+
+    // Guardamos la informacion de los informes en la base de datos
+
+    $sentencia = $pdo->prepare("INSERT INTO tb_informes (vendedor_designado ,fecha, informe_general, informe_boletas, informe_facturas) VALUES (:vendedor_designado,:fecha, :informe_general, :informe_boletas, :informe_facturas)");
+
+    $sentencia ->bindParam('vendedor_desginado', $vendedor_designado);
+    $sentencia ->bindParam('fecha', $fecha);
+    $sentencia ->bindParam('informe_general', $informe_general);
+    $sentencia ->bindParam('informe_boletas', $informe_boletas);
+    $sentencia ->bindParam('informe_facturas', $informe_facturas);
+    $sentencia ->execute();
+
+    ob_end_clean();
+
+    // iniciamos una sesion con un mensaje de exito
+    $_SESSION["mensaje"] = "Informe generado con éxito";
+    $_SESSION['icono'] = "success";
+    header("Location:".$URL."/vistas/Jefe_de_ventas/informes");
 
 ?>

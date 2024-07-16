@@ -9,7 +9,7 @@
   include("../../../app/controllers/jefe_ventas/inventario/listado_de_inventario.php");
 
   // Asignamos el texto "active" para que en el layout, el boton se resalte cuando se acceda a esta vista
-  $btn_lateral = 2;
+  $btn_lateral = 4;
 
   include("../../../layout/jefe_venta/parte1.php");
 
@@ -24,7 +24,7 @@
         <div class="row mb-2">
           <!-- Borramos el contenido de ejemplo y aumentamos a 12 columnas -->
           <div class="col-sm-12">
-            <h1 class="m-0">Listado de inventario</h1>
+            <h1 class="m-0">Listado de informes</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
