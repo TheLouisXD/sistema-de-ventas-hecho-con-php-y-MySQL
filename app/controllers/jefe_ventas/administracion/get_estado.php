@@ -10,6 +10,8 @@
 
     if($dato_estado){
         $id_estado = $dato_estado['id_estado'];
+    }else{
+        $id_estado = 2;
     }
 
     // Usando el dato id_estado recuperado, comparamos el valor para saber si el sistema esta abierto o cerrado
