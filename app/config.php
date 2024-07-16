@@ -18,7 +18,7 @@ try{
     echo "Error al conectar a la base de datos";
 }
 
-$URL = "http://localhost/www.sistemadeventas.com%202";
+$URL = "http://localhost/sistema-de-ventas";
 
 // Definimos la hora local del sistema, en este caso, la hora de chile
 date_default_timezone_set("America/Santiago");
