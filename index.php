@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sistema de ventas</title>
 
-
+  
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -35,7 +35,11 @@
 
 <!-- importamos el mensaje -->
   <?php
+
+    include("app/config.php");
+    include("app/controllers/login/contar_usuarios.php");
     session_start();
+    
     include("layout/mensajes.php");
   ?>
 
@@ -81,6 +85,7 @@
           <div class="col-12">
             <button type="submit" class="btn btn-primary btn-block">Ingresar <span class="fas fa-arrow-right"></span> </button>
           </div>
+          <?php echo $btn_inicializar ?>
           
           <!-- /.col -->
         </div>
