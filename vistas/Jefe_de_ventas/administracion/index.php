@@ -50,8 +50,8 @@
                         <!-- Creamos un par de botones para cambiar el estado del Sistema -->
                         <center><form class="form-group" action="../../../app/controllers/jefe_ventas/administracion/set_estado.php" method="POST">
                           <input type="text" name="nombre_usuario" value=<?php echo $nombres_usuario?> hidden ></input>
-                          <button type="submit" class="btn btn-success btn-lg btn_sistema" name="btn_sistema" <?php if ($id_estado == 1) echo 'disabled'?> value=1 >Abrir Sistema</button>
-                          <button type="submit" class="btn btn-danger btn-lg btn_sistema" name="btn_sistema" <?php if ($id_estado == 2) echo 'disabled'?> value=2 >Cerrar Sistema</button>
+                          <a href="../administracion/abrir_sistema.php" class="btn btn-success btn-lg btn_sistema" name="btn_sistema" <?php if ($id_estado == 1) echo 'hidden'?> >Abrir Sistema</a>
+                          <button type="submit" class="btn btn-danger btn-lg btn_sistema" name="btn_sistema" <?php if ($id_estado == 2) echo 'hidden'?> value=2 >Cerrar Sistema</button>
                         </form></center>
                     </div>
 
@@ -77,6 +77,7 @@
                                 <th>Nro</th>
                                 <th>Nombre del usuario</th>
                                 <th>Fecha y hora de la accion</th>
+                                <th>Vendedor designado</th>
                                 <th>Estado</th>
                             </thead>
                             <!-- Agregamos el codigo correspondiente para mostrar la informacion obtenida en el controlador de listado de usuarios -->
@@ -92,12 +93,14 @@
                                       $id_log = $admin_dato['id_log'];
                                       $nombre_usuario = $admin_dato['nombre_usuario'];
                                       $fyh_accion = $admin_dato['FyH_accion'];
+                                      $vendedor_designado = $admin_dato['vendedor_designado'];
                                       $id_estado_log = $admin_dato['id_estado'];?>
                                     <!-- concatenamos html para llenar la tabla con la informacion de la base de datos que necesitamos -->
                                     <tr>
                                         <td><?php echo $contador;?></td>
                                         <td><?php echo $nombre_usuario;?></td>
                                         <td><?php echo $fyh_accion;?></td>
+                                        <td><?php echo $vendedor_designado;?></td>
                                         <!-- Agregamos una logica para imprimir el rol del usuario en la tabla de usuarios basandonos en el id_rol del usuario -->
                                         <td><?php if ($id_estado_log == 1){
                                                     echo "Abierto";

@@ -1,4 +1,4 @@
-<!-- Este modulo sirve para mostrar la pagina del listado de inventario -->
+<!-- Este modulo sirve para mostrar la pagina del listado de informes-->
 
 <?php
 
@@ -6,7 +6,7 @@
   // Reducimos codigo e importamos la verificacion
   include("../../../layout/sesion_jefe_venta.php");
 
-  include("../../../app/controllers/jefe_ventas/inventario/listado_de_inventario.php");
+  include("../../../app/controllers/jefe_ventas/informes/get_informes.php");
 
   // Asignamos el texto "active" para que en el layout, el boton se resalte cuando se acceda a esta vista
   $btn_lateral = 4;
@@ -42,62 +42,33 @@
             <div class="col-md-12">
                 <div class="card card-outline card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Inventario</h3>
-                        <!-- Agregamos un boton para minimizar la tabla -->
-                        <div class="card-tools">
-                        <a href="<?php echo $URL?>/vistas/Jefe_de_ventas/inventario/create.php" class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i> Añadir producto</a>
-                        </div>
+                        <h3 class="card-title">Informes</h3>
                     </div>
                     <!-- Insertamos una tabla en la tarjeta -->
                     <div class="card-body">
-                        <table id="tabla_inventario" class="table table-bordered table-hover">
+                        <table id="tabla_informes" class="table table-bordered table-hover">
                           <!-- Cambiamos el color de la cabecera de la tabla -->
                             <thead class="thead-dark">
-                                <th>Nro</th>
-                                <th>Nombre</th>
-                                <th>Codigo (SKU)</th>
-                                <th>Precio</th>
-                                <th>Stock</th>
-                                <th>Acciones</th>
+                              <th>Nro informe</th>
+                              <th>Fecha</th>
+                              <th>Vendedor designado</th>
+                              <th>Informe General</th>
+                              <th>Informe de Boletas</th>
+                              <th>Informe de Facturas</th>
                             </thead>
-                            <!-- Agregamos el codigo correspondiente para mostrar la informacion obtenida en el controlador de listado de inventario -->
+                            <!-- Agregamos el codigo correspondiente para mostrar la informacion obtenida en el controlador de listado de informes -->
                             <tbody>
                                     <?php
-                                    
-                                    $contador = 0;
-
-                                    foreach($datos_inventario as $producto_dato){ 
-
-                                      $contador = $contador + 1;
-
-                                        $id_producto = $producto_dato['id_producto']?>
+                                    foreach($datos_informes as $informe_dato){ ?>
                                     <!-- concatenamos html para llenar la tabla con la informacion de la base de datos que necesitamos -->
                                     <tr>
-                                        <td><?php echo $contador?></td>
-                                        <td><?php echo $producto_dato['nombre'];?></td>
-                                        <td><?php echo $producto_dato['codigo'];?></td>
-                                        <td><?php echo $producto_dato['precio'];?></td>
-                                        <!-- Agregamos una logica para imprimir el rol del usuario en la tabla de inventario basandonos en el id_rol del usuario -->
-                                        <td><?php echo $producto_dato['stock'];?></td>
-                                        <td>
-                                          <!-- Aqui ponemos los botones de accion en la tabla de inventario -->
-                                        <center><div type="button" class="btn-group">
-                                          <!-- Este boton nos lleva  a la vista "show.php" junto con el id del usuario que queremos ver más informacion -->
-
-                                          <!-- boton para ver la informacion del usuario -->
-                                            <a href="show.php?id=<?php echo $id_producto?>" class="btn btn-info"> Ver
-                                              <i class="fas fa-user-circle"></i>
-                                            </a>
-                                            <!-- boton para actualizar la informacion del usuario -->
-                                            <a href="update.php?id=<?php echo $id_producto?>"  type="button" class="btn btn-success">
-                                              <i class="fas fa-edit"></i> Editar
-                                            </a>
-                                            <!-- boton para eliminar al usuario -->
-                                            <a href="delete.php?id=<?php echo $id_producto?>"  type="button" class="btn  btn-danger">
-                                              <i class="fas fa-trash"></i> Eliminar
-                                            </a>
-                                          </div></center>
-                                        </td>
+                                        <td><?php echo $informe_dato['id_informe']?></td>
+                                        <td><?php echo $informe_dato['fecha']?></td>
+                                        <td><?php echo $informe_dato['vendedor_designado']?></td>
+                                        <td><center><a href="../../../Documentos/Informes/<?php echo $informe_dato['informe_general'] ?>" class="btn btn-secondary"><i class="fa fa-eye"></i> Ver</a></center></td>
+                                        <td><center><a href="../../../Documentos/Informes/<?php echo $informe_dato['informe_boletas'] ?>" class="btn btn-secondary"><i class="fa fa-eye"></i> Ver</a></center></td>
+                                        <td><center><a href="../../../Documentos/Informes/<?php echo $informe_dato['informe_facturas'] ?>" class="btn btn-secondary"><i class="fa fa-eye"></i> Ver</a></center></td>
+                                        
                                     </tr>
                                     <!-- Cuando ya terminamos de insertar la informacion, volvemos a abrir el codigo php para asi poder hacer que el codigo funcione :D -->
                                 <?php
@@ -124,19 +95,19 @@
     <!-- Script para ejecutar DataTable, lo colocamos aqui por que este script requiere de unos plugisn que son importados en parte2.php -->
     <script>
     $(function () {
-      $("#tabla_inventario").DataTable({
+      $("#tabla_informes").DataTable({
           // Aqui elegimos cuantos elementos se muestran por pagina
           "pageLength": 5,
           // Cambiamos el idioma de dataTables
           language: {
               "emptyTable": "No hay información",
               "decimal": "",
-              "info": "Mostrando _START_ a _END_ de _TOTAL_ productos",
-              "infoEmpty": "Mostrando 0 a 0 de 0 productos",
+              "info": "Mostrando _START_ a _END_ de _TOTAL_ informes",
+              "infoEmpty": "Mostrando 0 a 0 de 0 informes",
               "infoFiltered": "(Filtrado de _MAX_ total inventario)",
               "infoPostFix": "",
               "thousands": ",",
-              "lengthMenu": "Mostrar _MENU_ productos",
+              "lengthMenu": "Mostrar _MENU_ informes",
               "loadingRecords": "Cargando...",
               "processing": "Procesando...",
               "search": "Buscador:",
@@ -151,6 +122,8 @@
           /* fin de idiomas */
 
         "responsive": true, "lengthChange": true, "autoWidth": true,
+        // Elegimos el orden
+        "order": [[0, "desc"]],
         // Cambiamos lo botones para que se vea más limpia la interfaz, haciendo que las funciones de exportar y la visibilidad de las columnas sean botones separados
         "buttons": [{
           extend: 'collection',
@@ -166,6 +139,6 @@
           extend:"colvis"}
         ]
         // para que funcionen los botones, debemos poner el nombre de la tabla seguido de _wrapper
-      }).buttons().container().appendTo('#tabla_inventario_wrapper .col-md-6:eq(0)');
+      }).buttons().container().appendTo('#tabla_informes_wrapper .col-md-6:eq(0)');
     });
   </script>

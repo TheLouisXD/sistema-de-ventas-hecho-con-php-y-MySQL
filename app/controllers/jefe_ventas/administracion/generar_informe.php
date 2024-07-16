@@ -1,3 +1,5 @@
+<!-- En este archivo se generan los informes de ventas, estos se guardan en la carpeta Informes y se guardan sus ubicaciones -->
+
 <?php 
 
     ob_start(); 
@@ -104,11 +106,21 @@
 
     $informe_facturas = generar_informe($fecha, 2, 'informe_facturas - '.$fecha.'.pdf');
 
+    // Recuperamos el nombre del vendedor
+
+    $get_vendedor = $pdo->prepare("SELECT vendedor_designado FROM tb_admin ORDER BY id_log DESC LIMIT 1");
+        $get_vendedor -> execute();
+        $dato_vendedor = $get_vendedor->fetch(PDO::FETCH_ASSOC);
+
+        if($dato_vendedor){
+            $nombre_vendedor = $dato_vendedor['vendedor_designado'];
+        }
+
     // Guardamos la informacion de los informes en la base de datos
 
     $sentencia = $pdo->prepare("INSERT INTO tb_informes (vendedor_designado ,fecha, informe_general, informe_boletas, informe_facturas) VALUES (:vendedor_designado,:fecha, :informe_general, :informe_boletas, :informe_facturas)");
 
-    $sentencia ->bindParam('vendedor_desginado', $vendedor_designado);
+    $sentencia ->bindParam('vendedor_designado', $nombre_vendedor);
     $sentencia ->bindParam('fecha', $fecha);
     $sentencia ->bindParam('informe_general', $informe_general);
     $sentencia ->bindParam('informe_boletas', $informe_boletas);

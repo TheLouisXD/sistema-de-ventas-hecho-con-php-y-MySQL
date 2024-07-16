@@ -1,4 +1,4 @@
-<!-- Este archivo es el index de generar ventas -->
+<!-- Este archivo es el index de generar facturas -->
 
 <?php
 
