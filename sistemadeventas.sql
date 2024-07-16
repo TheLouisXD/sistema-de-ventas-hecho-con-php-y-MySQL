@@ -208,8 +208,7 @@ ALTER TABLE `tb_facturas`
 -- Indices de la tabla `tb_informes`
 --
 ALTER TABLE `tb_informes`
-  ADD PRIMARY KEY (`id_informe`),
-  ADD KEY `vendedor_designado` (`vendedor_designado`);
+  ADD PRIMARY KEY (`id_informe`);
 
 --
 -- Indices de la tabla `tb_inventario`
@@ -229,8 +228,7 @@ ALTER TABLE `tb_rol`
 ALTER TABLE `tb_usuarios`
   ADD PRIMARY KEY (`id_usuario`),
   ADD KEY `id_rol` (`id_rol`),
-  ADD KEY `id_rol_2` (`id_rol`),
-  ADD KEY `nombres` (`nombres`);
+  ADD KEY `id_rol_2` (`id_rol`);
 
 --
 -- Indices de la tabla `tb_venta`
@@ -254,49 +252,49 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT de la tabla `tb_documento`
 --
 ALTER TABLE `tb_documento`
-  MODIFY `id_documento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_documento` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_estado`
 --
 ALTER TABLE `tb_estado`
-  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_facturas`
 --
 ALTER TABLE `tb_facturas`
-  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_informes`
 --
 ALTER TABLE `tb_informes`
-  MODIFY `id_informe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_informe` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_inventario`
 --
 ALTER TABLE `tb_inventario`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_rol`
 --
 ALTER TABLE `tb_rol`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_venta`
 --
 ALTER TABLE `tb_venta`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -315,16 +313,10 @@ ALTER TABLE `tb_facturas`
   ADD CONSTRAINT `tb_facturas_ibfk_1` FOREIGN KEY (`id_venta`) REFERENCES `tb_venta` (`id_venta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `tb_informes`
---
-ALTER TABLE `tb_informes`
-  ADD CONSTRAINT `tb_informes_ibfk_1` FOREIGN KEY (`vendedor_designado`) REFERENCES `tb_usuarios` (`nombres`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Filtros para la tabla `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
-  ADD CONSTRAINT `rol` FOREIGN KEY (`id_rol`) REFERENCES `tb_rol` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `rol` FOREIGN KEY (`id_rol`) REFERENCES `tb_rol` (`id_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tb_venta`
