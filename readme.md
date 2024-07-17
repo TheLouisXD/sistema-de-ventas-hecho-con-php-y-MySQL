@@ -1,6 +1,6 @@
 ## Proyecto: Sistema de ventas hecho con php y MySQL
 
-Este proyecto consiste en crea un sistema de ventas con la ayuda de un curso de youtube, aqui ire subiendo cada actualizacion del codigo junto con informacion del mismo.
+Este es un proyecto que trata sobre crear un sistema de ventas para un bazar llamado "las nonitas", este sistema esta creado con php y mySQL y fue desarrollado para una clase xd
 
 ## Tecnologias utilizadas
 - PHP
