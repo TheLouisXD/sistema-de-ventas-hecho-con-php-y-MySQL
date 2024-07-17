@@ -5,11 +5,15 @@ Este proyecto consiste en crea un sistema de ventas con la ayuda de un curso de 
 ## Tecnologias utilizadas
 - PHP
 - MySQL
-- adminLTE
-- XAMPP
+- Apache
+- Xampp
 - HTML
-- SweetAlert2
+- CSS
 - DataTables
+- SweetAlert
+- BootStrap
+- Plantillas admin LTE
+- TCPDF
 
 ## Como usar el codigo
 El sistema viene con un archivo llamado "inicializar-sistema.pdf" en donde se detallan los pasos para iniciar el sistema de forma correcta
