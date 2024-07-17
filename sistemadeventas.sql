@@ -246,7 +246,7 @@ ALTER TABLE `tb_venta`
 -- AUTO_INCREMENT de la tabla `tb_admin`
 --
 ALTER TABLE `tb_admin`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_documento`

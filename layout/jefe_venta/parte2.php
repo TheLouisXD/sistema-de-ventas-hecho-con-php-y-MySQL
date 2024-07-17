@@ -20,10 +20,10 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      <img src="https://c.tenor.com/9RCIDZjkhBsAAAAC/tenor.gif" onclick="location.href='https://thelouisxd.github.io/Alegrie-e-wekito/'" height="30px">
+      <img src="https://c.tenor.com/9RCIDZjkhBsAAAAC/tenor.gif" height="30px">
     </div>
     <!-- Copyright del sistema (Cambiar despues) -->
-    <strong>Copyright &copy; 2024 <a href="https://github.com/TheLouisXD">TheLouisXD</a>.</strong> Todos los derechos reservados.
+    <strong>Copyright &copy; 2024.</strong> Todos los derechos reservados.
   </footer>
 </div>
 <!-- ./wrapper -->
