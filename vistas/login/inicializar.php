@@ -38,7 +38,9 @@ include("../../app/config.php");
   <!-- Fondo de la pagina de LOGIN -->
   <style>
     body{
-        background-image: url("https://i.pinimg.com/564x/c8/77/9f/c8779f09b14cb34c1702187db6f63154.jpg");
+        background-image: url("../../imagenes/fondo_login.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
   </style>
 
